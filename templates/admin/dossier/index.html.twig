@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+    <div class="row row-sm justify-content-center mt-5">
+        <div class="col-10">
+            <div class="card custom-card">
+                <div class="card-header  p-3 tx-semibold tx-white bg-primary">
+                    Liste des candidatures sponsors et partenaires
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
+                            <thead>
+                            <tr>
+                                <th class="text-center">Categorie</th>
+                                <th class="text-center">Type</th>
+                                <th class="text-center">Package</th>
+                                <th class="text-center">Entreprise</th>
+                                <th class="text-center">Statut</th>
+                                <th class="text-center">Date creation</th>
+                                <th class="text-center">RCCM</th>
+                                <th class="text-center">CC</th>
+                                <th class="text-center">Ville</th>
+                                <th class="text-center">Site web</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">Téléphone</th>
+                                <th class="text-center">Représentant</th>
+                                <th class="text-center">Fonction</th>
+                                <th class="text-center">Raison</th>
+                                <th class="text-center">Objectif</th>
+                                <th class="text-center">Communication</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for d in dossiers %}
+                                <tr>
+                                    <th class="">{{ d.categorie.label }}</th>
+                                    <th>{{ d.type.label }}</th>
+                                    <th class="">{{ d.package.nom }}</th>
+                                    <th>{{ d.nomEntreprise }}</th>
+                                    <th class="">{{ d.statutEntreprise }}</th>
+                                    <th class="">{{ d.dateCreation ? (d.dateCreation | date("d-m-Y")) : "" }}</th>
+                                    <th>{{ d.numRccm }}</th>
+                                    <th class="">{{ d.numCC }}</th>
+                                    <th>{{ d.villePays }}</th>
+                                    <th class="">{{ d.siteweb }}</th>
+                                    <th class="">{{ d.email }}</th>
+                                    <th>{{ d.telephone }}</th>
+                                    <th class="">{{ d.nomRep }}</th>
+                                    <th>{{ d.fonctionRep }}</th>
+                                    <th class="">{{ d.raison }}</th>
+                                    <th class="">{{ d.objectif }}</th>
+                                    <th>{{ d.communication }}</th>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                {#                <div class="card-footer">#}
+                {#                    <a href="{{ path('app_admin_offre_new') }}" class="btn btn-primary float-end">Nouveau</a>#}
+                {#                </div>#}
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+{% endblock %}
+

@@ -1,0 +1,140 @@
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block title %}Log in!{% endblock %}#}
+
+{#{% block body %}#}
+{#<form method="post">#}
+{#    {% if error %}#}
+{#        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+{#    {% endif %}#}
+
+{#    {% if app.user %}#}
+{#        <div class="mb-3">#}
+{#            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>#}
+{#        </div>#}
+{#    {% endif %}#}
+
+{#    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>#}
+{#    <label for="inputEmail">Email</label>#}
+{#    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>#}
+{#    <label for="inputPassword">Password</label>#}
+{#    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>#}
+
+{#    <input type="hidden" name="_csrf_token"#}
+{#           value="{{ csrf_token('authenticate') }}"#}
+{#    >#}
+
+{#    <button class="btn btn-lg btn-primary" type="submit">#}
+{#        Sign in#}
+{#    </button>#}
+{#</form>#}
+{#{% endblock %}#}
+
+
+
+
+{% extends 'custom-base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+
+    <!-- ROW -->
+    <div class="row signpages text-center">
+        <div class="col-md-12">
+            <div class="card border-0">
+                <div class="row row-sm">
+                    <div class="col-lg-6 col-xl-6 col-xs-12 col-sm-12 login_form rounded-start-11">
+                        <div class="container-fluid">
+                            <div class="row row-sm">
+                                <div class="card-body mt-2 mb-2">
+                                    <div class="mobilelogo">
+                                        <img src="{{ absolute_url(asset('build/img/brand/logo.png')) }}"
+                                             class=" d-lg-none header-brand-img text-start float-start mb-4 dark-logo"
+                                             alt="logo">
+                                        <img src="{{ absolute_url(asset('build/img/brand/logo-light.png')) }}"
+                                             class=" d-lg-none header-brand-img text-start float-start mb-4 light-logo"
+                                             alt="logo">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <form method="post">
+                                        <h2 class="text-start mb-2">Connexion</h2>
+                                        <p class="mb-4 text-muted tx-13 ms-0 text-start">
+                                            Accédez à votre espace d'administration
+                                        </p>
+                                        <div class="panel desc-tabs border-0 p-0">
+                                            <div class="tab-menu-heading">
+                                                <div class="tabs-menu ">
+                                                    <ul class="nav panel-tabs">
+                                                        <li class="">
+                                                            <a href="#tab01" class="active"
+                                                               data-bs-toggle="tab">Utilisateur</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body tabs-menu-body mt-2">
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active" id="tab01">
+                                                        {% if error %}
+                                                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                                        {% endif %}
+                                                        <div class="form-group text-start">
+                                                            <label class="tx-medium">Email</label>
+                                                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                                                        </div>
+                                                        <div class="form-group text-start">
+                                                            <label class="tx-medium">Mot de passe</label>
+                                                            <input class="form-control border-end-0"
+                                                                   placeholder="Enter your password" type="password"
+                                                                   autocomplete="new-password"
+                                                                   name="password"
+                                                                   data-bs-toggle="password">
+                                                        </div>
+                                                        <input type="hidden" name="_csrf_token"
+                                                               value="{{ csrf_token('authenticate') }}"
+                                                        >
+                                                        <button class="btn btn-primary btn-block"
+                                                                type="submit">Se Connecter</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="text-center mt-4 ms-0 mb-3">
+                                        <div class="mb-1"><a href="#">Mot de passe oublié?</a></div>
+                                        <div>Pas de compte? <a href="mailto:lopezkouakou15@gmail.com">Contactez nous</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-6 d-none d-lg-block text-center bg-primary details rounded-end-11">
+                        <div class="mt-4 pt-4 p-2 pos-relative">
+                            <img src="{{ absolute_url(asset('build/img/brand/logo-light.png')) }}"
+                                 class="header-brand-img mb-3 mt-3" alt="logo">
+                            <div class="clearfix"></div>
+                            <img src="{{ absolute_url(asset('build/img/pngs/user.png')) }}" class="ht-250 mb-0"
+                                 alt="user">
+                            <h2 class="mt-4 text-white tx-normal">Connecter vous à votre compte</h2>
+                            <span class="tx-white-6 tx-13 mb-5 mt-xl-0">Accédez à votre espace d'administration afin de gérer au mieux vos affaires</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END ROW -->
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <!-- BOOTSTRAP SHOW PASSWORD JS -->
+    <script src="{{ absolute_url(asset('build/plugins/bootstrap/js/bootstrap-show-password.min.js')) }}"></script>
+
+    <!-- GENERATE-OTP JS -->
+    <script src="{{ absolute_url(asset('build/js/generate-otp.js')) }}"></script>
+{% endblock %}

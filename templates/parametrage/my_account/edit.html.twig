@@ -1,0 +1,201 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+
+
+    <!-- ROW -->
+    <div class="row row-sm">
+        <div class="col-xl-12 col-md-12">
+            <div class="card custom-card">
+                <div class="card-body">
+                    <div class="panel profile-cover">
+                        <div class="profile-cover__img">
+                            <img src="{{ 'https://ui-avatars.com/api/?background=random&font=000&name=' ~ agent.firstName  ~ '+' ~  agent.lastName }}"
+                                 alt="img"/>
+                            <a href="javascript:;"><i class="mdi mdi-pencil"></i></a>
+                        </div>
+                        <div class="profile-info">
+                            <h3 class="tx-medium">{{ agent.firstName }} {{ agent.lastName }}</h3>
+                            <h6 class="tx-normal">{{ agent.phone }}</h6>
+                        </div>
+                        <div class="profile-cover__action profile-img"
+                             style="background: url({{ '/img/media/bg-profileimage.jpg' }}) no-repeat !important;"></div>
+                    </div>
+                    <div class="profile-tab tab-menu-heading d-flex mt-3">
+                        <div class="">
+                            <nav class="nav nav-pills flex-column flex-sm-row py-2">
+                                <a class="nav-link active" data-bs-toggle="tab" href="#about">Profile</a>
+                                <a class="nav-link" data-bs-toggle="tab" href="#account">Changer de mot de passe</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- END ROW -->
+
+    <!-- ROW -->
+    <div class="row row-sm">
+        <div class="col-xxl-12 col-xl-12 col-md-12">
+            <div class="card custom-card main-content-body-profile">
+                <div class="tab-content">
+                    <div class="main-content-body tab-pane active p-4 border-top-0" id="about">
+                        <div class="card custom-card border">
+                            {{ form_start(form) }}
+                            <div class="card-body">
+                                <div class="mb-4 main-content-label">Informations personnelles</div>
+                                <div class="form-horizontal">
+                                    <div class="mb-4 main-content-label">Etat civil</div>
+                                    <div class="form-group ">
+                                        <div class="row row-sm">
+                                            <div class="col-md-2">
+                                                <label class="form-label">Prénoms</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                {{ form_widget(form.firstName,{attr: {class: 'form-control' ~ ((form_errors(form.firstName)) ? ' is-invalid' : (form.vars.data.firstName ? ' is-valid' : '' )) }}) }}
+                                                <div class="invalid-feedback">
+                                                    {{ form_errors(form.firstName) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <div class="row row-sm">
+                                            <div class="col-md-2">
+                                                <label class="form-label">Nom</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                {{ form_widget(form.lastName,{attr: {class: 'form-control' ~ ((form_errors(form.lastName)) ? ' is-invalid' : (form.vars.data.lastName ? ' is-valid' : '' )) }}) }}
+                                                <div class="invalid-feedback">
+                                                    {{ form_errors(form.lastName) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4 main-content-label">Compte et contact</div>
+                                    <div class="form-group">
+                                        <div class="row row-sm">
+                                            <div class="col-md-2">
+                                                <label class="form-label">Email</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                {{ form_widget(form.email,{attr: {class: 'form-control' ~ ((form_errors(form.email)) ? ' is-invalid' : (form.vars.data.email ? ' is-valid' : '' )) }}) }}
+                                                <div class="invalid-feedback">
+                                                    {{ form_errors(form.email) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <div class="row row-sm">
+                                            <div class="col-md-2">
+                                                <label class="form-label">Téléphone</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                {{ form_widget(form.phone,{attr: {class: 'form-control' ~ ((form_errors(form.phone)) ? ' is-invalid' : (form.vars.data.phone ? ' is-valid' : '' )) }}) }}
+                                                <div class="invalid-feedback">
+                                                    {{ form_errors(form.phone) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4 main-content-label">Confirmation</div>
+                                    <div class="form-group ">
+                                        <div class="row row-sm">
+                                            <div class="col-md-2">
+                                                <label class="form-label">Mot de passe</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                {{ form_widget(form.password,{attr: {class: 'form-control' ~ ((form_errors(form.password)) ? ' is-invalid' : (form.vars.data.password ? ' is-valid' : '' )) }}) }}
+                                                <div class="invalid-feedback">
+                                                    {{ form_errors(form.password) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer py-3">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary float-end"><i class="fa fa-save"></i>
+                                        Enregistrer
+                                    </button>
+                                </div>
+                            </div>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                    <div class="main-content-body tab-pane p-4 border-top-0" id="account">
+                        <div class="card custom-card border">
+                            {{ form_start(form2) }}
+                            <div class="card-body" data-select2-id="12">
+                                <div class="form-horizontal" data-select2-id="11">
+                                    <div class="mb-4 main-content-label">Modifier mot de passe</div>
+                                    <div class="form-group ">
+                                        <div class="row row-sm">
+                                            <div class="col-md-2">
+                                                <label class="form-label">Ancien Mot De passe</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                {{ form_widget(form2.password,{attr: {class: 'form-control' ~ ((form_errors(form2.password)) ? ' is-invalid' : (form2.vars.data.password ? ' is-valid' : '' )) }}) }}
+                                                <div class="invalid-feedback">
+                                                    {{ form_errors(form2.password) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <div class="row row-sm">
+                                            <div class="col-md-2">
+                                                <label class="form-label">Nouveau mot de passe</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                {{ form_widget(form2.plainPassword.first,{attr: {class: 'form-control' ~ ((form_errors(form2.plainPassword)) ? ' is-invalid' :  ' is-valid') }}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <div class="row row-sm">
+                                            <div class="col-md-2">
+                                                <label class="form-label">Confirmez mot de passe</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                {{ form_widget(form2.plainPassword.second,{attr: {class: 'form-control' ~ ((form_errors(form2.plainPassword.second)) ? ' is-invalid' :  ' is-valid') }}) }}
+                                                <div class="invalid-feedback">
+                                                    {{ form_errors(form2.plainPassword.second) }}
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer py-3">
+                                <div class="btn-list float-end">
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>
+                                        Enregistrer
+                                    </button>
+                                </div>
+                            </div>
+                            {{ form_end(form2) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END ROW -->
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <!-- GALLERY JS -->
+{#    <script src="{{ absolute_url(asset('build/plugins/SmartPhoto-master/smartphoto.js')) }}"></script>#}
+{% endblock %}

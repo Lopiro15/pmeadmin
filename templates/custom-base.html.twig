@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- META DATA -->
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Srem – Administration">
+        <meta name="author" content="Moses Art">
+        <meta name="keywords" content="admin, admin dashboard, dashboard, symfony, symfony admin, symfony admin dashboard, symfony admin template, symfony bootstrap, symfony bootstrap 5, symfony dashboard, symfony dashboard template, symfony frameworks, symfony php, symfony template, symfony ui">
+        
+        <!-- TITLE -->
+		<title> GALA DES PME – Administration </title>
+        {% block stylesheets %}
+        {{ include('layouts/custom-styles.html.twig') }}
+    
+        {% endblock %}
+
+    </head>
+    <body  class="main-body leftmenu ltr light-theme">
+
+        <!-- GLOBAL-LOADER -->
+        <div id="global-loader">
+            <img src="{{absolute_url(asset('build/img/loader.svg'))}}" class="loader-img" alt="Loader">
+        </div>
+        <!-- /GLOBAL-LOADER -->
+
+        <!-- PAGE -->
+		<div class="page main-signin-wrapper">
+
+            <!-- CONTENT -->
+            {% block body %}
+                    
+            {% endblock %}
+        
+            <!-- CONTENT CLOSED-->
+
+        </div>
+
+        {% block javascripts %}    
+        {{ include('layouts/custom-scripts.html.twig') }}
+        
+        {% endblock %} 
+        
+        
+    </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- META DATA -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Srem – Administration">
+    <meta name="author" content="Moses Art">
+    <meta name="keywords"
+          content="admin, admin dashboard, dashboard, symfony, symfony admin, symfony admin dashboard, symfony admin template, symfony bootstrap, symfony bootstrap 5, symfony dashboard, symfony dashboard template, symfony frameworks, symfony php, symfony template, symfony ui">
+
+    <!-- TITLE -->
+    <title> GALA DES PME – Administration </title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+              integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
+              crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        {{ include('layouts/styles.html.twig') }}
+
+    {% endblock %}
+
+</head>
+<body class="main-body leftmenu ltr light-theme dark-menu">
+
+<!-- GLOBAL-LOADER -->
+<div id="global-loader">
+    <img src="{{ absolute_url(asset('build/img/loader.svg')) }}" class="loader-img" alt="Loader">
+</div>
+<!-- /GLOBAL-LOADER -->
+
+<!-- PAGE -->
+<div class="page">
+
+    <!-- MAIN-HEADER -->
+    {{ include('layouts/main-header.html.twig') }}
+    <!-- MAIN-HEADER CLOSED -->
+
+    <!-- APP-SIDEBAR -->
+    {{ include('layouts/main-sidebar.html.twig') }}
+    <!-- APP-SIDEBAR CLOSED-->
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content side-content pt-0">
+        <div class="main-container container-fluid">
+            <div class="inner-body">
+
+                <!-- CONTENT -->
+                {% block body %}
+
+                {% endblock %}
+
+                <!-- CONTENT CLOSED-->
+
+            </div>
+        </div>
+    </div>
+    <!-- MAIN CONTENT CLOSED-->
+
+    <!-- COUNTRY-SELECTOR-MODAL -->
+    {{ include('layouts/modal.html.twig') }}
+    <!-- END COUNTRY-SELECTOR-MODAL -->
+
+    <!-- RIGHT-SIDEBAR  -->
+    {{ include('layouts/right-sidebar.html.twig') }}
+    <!-- END RIGHT-SIDEBAR -->
+
+    <!-- MAIN-FOOTER -->
+    {{ include('layouts/main-footer.html.twig') }}
+    <!-- MAIN-FOOTER CLOSED-->
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+{% block javascripts %}
+    {{ include('layouts/scripts.html.twig') }}
+    <script src="//cdn.datatables.net/1.11.0/js/jquery.dataTables.js"></script>
+    <script src="{{ absolute_url(asset('build/plugins/datatable/js/dataTables.bootstrap5.js')) }}"></script>
+    <script src="{{ absolute_url(asset('build/plugins/datatable/js/dataTables.buttons.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('build/plugins/datatable/js/buttons.bootstrap5.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('build/plugins/datatable/js/jszip.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('build/plugins/datatable/pdfmake/pdfmake.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('build/plugins/datatable/pdfmake/vfs_fonts.js')) }}"></script>
+    <script src="{{ absolute_url(asset('build/plugins/datatable/js/buttons.html5.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('build/plugins/datatable/js/buttons.print.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('build/plugins/datatable/js/buttons.colVis.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('build/plugins/datatable/dataTables.responsive.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('build/plugins/datatable/responsive.bootstrap5.min.js')) }}"></script>
+    <script src="https://cdn.datatables.net/rowgroup/1.5.0/js/dataTables.rowGroup.js"></script>
+    <script src="https://cdn.datatables.net/rowgroup/1.5.0/js/rowGroup.bootstrap5.js"></script>
+    <!-- INTERNAL FILEUPLOADS JS -->
+    <script src="{{absolute_url(asset('build/plugins/fileuploads/js/fileupload.js'))}}"></script>
+    <script src="{{absolute_url(asset('build/plugins/fileuploads/js/file-upload.js'))}}"></script>
+    <!-- INTERNAL FANCY UPLOADER JS -->
+    <script src="{{absolute_url(asset('build/plugins/fancyuploder/jquery.ui.widget.js'))}}"></script>
+    <script src="{{absolute_url(asset('build/plugins/fancyuploder/jquery.fileupload.js'))}}"></script>
+    <script src="{{absolute_url(asset('build/plugins/fancyuploder/jquery.iframe-transport.js'))}}"></script>
+    <script src="{{absolute_url(asset('build/plugins/fancyuploder/jquery.fancy-fileupload.js'))}}"></script>
+    <script src="{{absolute_url(asset('build/plugins/fancyuploder/fancy-uploader.js'))}}"></script>
+
+    <script src="{{absolute_url(asset('build/plugins/gallery/picturefill.js'))}}"></script>
+    <script src="{{absolute_url(asset('build/plugins/gallery/lightgallery.js'))}}"></script>
+    <script src="{{absolute_url(asset('build/plugins/gallery/lightgallery-1.js'))}}"></script>
+    <script src="{{absolute_url(asset('build/plugins/gallery/lg-pager.js'))}}"></script>
+    <script src="{{absolute_url(asset('build/plugins/gallery/lg-autoplay.js'))}}"></script>
+    <script src="{{absolute_url(asset('build/plugins/gallery/lg-fullscreen.js'))}}"></script>
+    <script src="{{absolute_url(asset('build/plugins/gallery/lg-zoom.js'))}}"></script>
+    <script src="{{absolute_url(asset('build/plugins/gallery/lg-hash.js'))}}"></script>
+    <script src="{{absolute_url(asset('build/plugins/gallery/lg-share.js'))}}"></script>
+
+    <!-- INTERNAL RICH TEXT EDITOR JS -->
+    <script src="{{absolute_url(asset('build/plugins/rich-text/jquery.richtext.js'))}}"></script>
+    {{ encore_entry_script_tags('js/form-editor') }}
+
+{#    <script src="{{absolute_url(asset('build/js/advanced-form-elements.js'))}}"></script>#}
+    {{ encore_entry_script_tags('js/select2') }}
+
+    {{ encore_entry_script_tags('js/table-data') }}
+    <!-- INTERNAL PARSLEY JS -->
+    <script src="{{absolute_url(asset('build/plugins/parsleyjs/parsley.min.js'))}}"></script>
+
+    <!-- INTERNAL FORM-VALIDATION JS -->
+    {{ encore_entry_script_tags('js/form-validation') }}
+
+    <!-- INTERNAL SELECT 2 JS  -->
+    {{ encore_entry_script_tags('js/select2') }}
+
+    <!-- INTERNAL FORM-VALIDATIONS JS -->
+    {{ encore_entry_script_tags('js/form-vallidations') }}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+{% for label, messages in app.flashes %}
+    {% for index, message in messages %}
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 11000">
+            <div id="liveToast{{ index }}" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-{{ label }}">
+                    <img src="{{absolute_url(asset('build/img/brand/icon-light.png'))}}" class="rounded me-2" alt="img" height="16">
+                    <strong class="me-auto">SREM</strong>
+                    <small>maintenant</small>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    {{message}}
+                </div>
+            </div>
+        </div>
+        <script>
+            var toastLiveExample = document.getElementById('liveToast{{ index }}')
+            var toast{{ index }} = new bootstrap.Toast(toastLiveExample)
+            toast{{ index }}.show()
+        </script>
+    {% endfor %}
+{% endfor %}
+<script>
+</script>
+</body>
+</html>

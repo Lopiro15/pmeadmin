@@ -1,0 +1,226 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row row-sm justify-content-center mt-5">
+        <div class="col-xl-10">
+            <div class="card custom-card">
+                <div class="card-header  p-3 tx-semibold tx-white bg-primary">
+                    Détail Candidature
+                </div>
+                <div class="card-body" id="show">
+                    <fieldset>
+                        <legend>Categories</legend>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">N°</th>
+                                    <th class="text-center">Nom</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for index, cat in candidature.categories %}
+                                <tr>
+                                    <td class="text-center">{{ index + 1 }}</td>
+                                    <td class="text-center">{{ cat.label }}</td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Entreprise</legend>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Raison social</th>
+                                    <th class="text-center">Statut</th>
+                                    <th class="text-center">Création</th>
+                                    <th class="text-center">RCCM</th>
+                                    <th class="text-center">CC</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="">{{ candidature.nomEntreprise }}</td>
+                                    <td class="">{{ candidature.statutEntreprise }}</td>
+                                    <td class="text-center">{{ candidature.dateCreation  ? (candidature.dateCreation | date("d/m/Y")) : ""}}</td>
+                                    <td class="">{{ candidature.NumRCCM }}</td>
+                                    <td class="">{{ candidature.numCC }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Coordonnées de l'entreprise</legend>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Adresse</th>
+                                    <th class="text-center">Ville</th>
+                                    <th class="text-center">Pays</th>
+                                    <th class="text-center">Téléphone</th>
+                                    <th class="text-center">Email</th>
+                                    <th class="text-center">Site web</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="">{{ candidature.adresseSiege }}</td>
+                                    <td class="">{{ candidature.ville }}</td>
+                                    <td class="">{{ candidature.pays }}</td>
+                                    <td class="">{{ candidature.telephone }}</td>
+                                    <td class="">{{ candidature.email }}</td>
+                                    <td class="">{{ candidature.siteWeb }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Représentant de l'entreprise</legend>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Nom complet</th>
+                                    <th class="text-center">Fonction</th>
+                                    <th class="text-center">Date naissance</th>
+                                    <th class="text-center">Genre</th>
+                                    <th class="text-center">Pays</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="">{{ candidature.fullnameRepresentant }}</td>
+                                    <td class="">{{ candidature.fonctionRepresentant }}</td>
+                                    <td class="">{{ candidature.dateNaissReresentant | date('d-m-Y') }}</td>
+                                    <td class="">{{ candidature.genreRepresentant }}</td>
+                                    <td class="">{{ candidature.paysRepresentant }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Infos supplémentaire de l'entreprise</legend>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Secteur</th>
+                                    <th class="text-center">effectif</th>
+                                    <th class="text-center">CA 2022</th>
+                                    <th class="text-center">CA 2023</th>
+                                    <th class="text-center">CA 2024</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="">{{ candidature.secteurActivite }}</td>
+                                    <td class="text-end">{{ candidature.effectif | number_format(0, ',', ' ') }}</td>
+                                    <td class="text-end">{{ candidature.ca2022 | number_format(0, ',', ' ') }}</td>
+                                    <td class="text-end">{{ candidature.ca2023 | number_format(0, ',', ' ') }}</td>
+                                    <td class="text-end">{{ candidature.ca2024 | number_format(0, ',', ' ')  }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Pitch</legend>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Parcours
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        {{ candidature.parcours }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Produits ou services phares
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        {{ candidature.produits }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Réalisation
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        {{ candidature.realisation }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Impact social et RSE
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        {{ candidature.impact }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Justificatifs</legend>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Nom</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for j in candidature.justificatifs %}
+                                <tr>
+                                    <td class="">{{ j.label }}</td>
+                                    <td class="text-center">
+                                        <a class="btn rounded-2 btn-primary btn-sm" href="{{ vich_uploader_asset(j, 'file') }}" target="_blank">Consulter</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="card-footer">
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <!--end col-->
+    </div>
+{% endblock %}
+
+
+

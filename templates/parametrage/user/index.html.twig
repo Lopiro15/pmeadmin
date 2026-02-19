@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+    <!-- ROW -->
+    <div class="row row-sm justify-content-center mt-5">
+        <div class="col-md-10">
+            <div class="card custom-card">
+                <div class="card-header p-3 tx-semibold tx-white bg-primary">
+                    Liste des collaborateurs
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
+                            <thead>
+                            <tr>
+                                <th class="wd-20p text-center">Nom</th>
+                                <th class="wd-25p text-center">Prénom</th>
+                                <th class="wd-20p text-center">Email</th>
+                                <th class="wd-20p text-center">Téléphone</th>
+                                <th class="text-center">Actif?</th>
+                                <th class="wd-20p text-center">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for ag in users %}
+                                <tr>
+                                    <td>{{ ag.lastName }}</td>
+                                    <td>{{ ag.firstName }}</td>
+                                    <td>{{ ag.email }}</td>
+                                    <td class="text-center">{{ ag.phone }}</td>
+                                    <td class="">
+                                        <span class="badge rounded-pill text-{{ ag.enable ? "success" : "warning" }} bg-{{ ag.enable ? "success" : "warning" }}-transparent px-2">{{ ag.enable ? "Actif" : "Inactif" }}</span>
+                                    </td>
+                                    <td class="d-flex justify-content-center">
+                                        {#                                        <a href="{{ path('app_parametrage_categorie_vente_edit', {'id': cat.id}) }}" class="btn btn-sm btn-primary me-2"><i class="fa fa-edit"></i></a>#}
+                                        <a href="{{ path('app_parametrage_collaborateur_show', {'id': ag.id}) }}" class="btn btn-sm btn-primary me-2"><i class="fa fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="{{ path('app_parametrage_collaborateur_new') }}" class="btn btn-primary float-end">Nouveau</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END ROW -->
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

@@ -1,0 +1,81 @@
+{% block title %}
+    Consultation compte collaborateur
+{% endblock %}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row row-sm justify-content-center mt-5">
+        <div class="col-xl-10">
+            <div class="card custom-card">
+                <div class="card-header  p-3 tx-semibold tx-white bg-primary">
+                    Détail Collaborateur
+                </div>
+                <div class="card-body">
+                    <fieldset>
+                        <legend>Informations personnelles</legend>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0">
+
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Nom</th>
+                                    <th class="text-center">Prénoms</th>
+                                    <th class="text-center">Téléphones</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">{{ user.lastName }}</th>
+                                    <td>{{ user.firstName }}</td>
+                                    <td class="text-center">{{ user.phone }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Compte Utilisateur</legend>
+                        <div class="table-responsive">
+                            <table class="table table-bordered mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Email</th>
+                                    <th class="text-center">Rôle</th>
+                                    <th class="text-center">Actif ?</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">{{ user.email }}</th>
+                                    <td>Administrateur</td>
+                                    <td class="">
+                                        <span class="badge rounded-pill text-{{ user.enable ? "success" : "warning" }} bg-{{ user.enable ? "success" : "warning" }}-transparent px-2">{{ user.enable ? "Actif" : "Inactif" }}</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="card-footer">
+                    <form action="{{ path('app_parametrage_collaborateur_show', {'id': user.id}) }}" method="post">
+                        {{ include('includes/_modal_delete.html.twig') }}
+                        <input type="submit" value="{{ user.enable ? "Désactiver" : "Activer" }}" name="enable" class="me-2 btn btn-{{ user.enable ? "warning" : "success" }} float-end"/>
+                        <a href="{{ path('app_parametrage_collaborateur_edit', {'id': user.id }) }}" class="btn btn-primary float-end me-2">Modifier</a>
+                        <a href="{{ path('app_parametrage_collaborateur_index') }}" class="btn btn-secondary float-end me-2"> <i class="bx bx-arrow-back"></i> Retour</a>
+                        <input type="hidden" name="token" value="{{ csrf_token('delete-user') }}">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <!--end col-->
+    </div>
+{% endblock %}
+
+
+
+
+

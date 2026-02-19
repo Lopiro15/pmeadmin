@@ -1,0 +1,10 @@
+fieldset > legend {
+    color: #000;
+    margin-bottom: 2rem;
+    font-size: 1rem !important;
+    border-bottom: 1px solid rgb(225, 231, 214) !important;
+}
+
+fieldset {
+    margin-bottom: 1rem !important;
+}

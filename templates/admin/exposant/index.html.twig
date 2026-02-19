@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+    <div class="row row-sm justify-content-center mt-5">
+        <div class="col-10">
+            <div class="card custom-card">
+                <div class="card-header  p-3 tx-semibold tx-white bg-primary">
+                    Liste des candidatures exposants
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
+                            <thead>
+                            <tr>
+                                <th class="text-center">Nom complet</th>
+                                <th class="text-center">Entreprise</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">Type produit</th>
+                                <th class="text-center">Pack</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for e in exposants %}
+                                <tr>
+                                    <th class="">{{ e.fullname }}</th>
+                                    <th>{{ e.entreprise }}</th>
+                                    <th class="">{{ e.email }}</th>
+                                    <th>{{ e.typeProd }}</th>
+                                    <th class="">{{ e.pack.label }}</th>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                {#                <div class="card-footer">#}
+                {#                    <a href="{{ path('app_admin_offre_new') }}" class="btn btn-primary float-end">Nouveau</a>#}
+                {#                </div>#}
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+{% endblock %}
+
