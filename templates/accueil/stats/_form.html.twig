@@ -1,0 +1,32 @@
+<fieldset>
+    <legend>Information Stat</legend>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Label</label>
+                {{ form_widget(form.label,{attr: {class: 'form-control' ~ ((form_errors(form.label)) ? ' is-invalid' : (form.vars.data.label ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.label)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Valeur</label>
+                {{ form_widget(form.valeur,{attr: {class: 'form-control' ~ ((form_errors(form.valeur)) ? ' is-invalid': (form.vars.data.valeur ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.valeur)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Ajouter le plus?</label>
+                {{ form_widget(form.isPlus,{attr: {class: 'form-control' ~ ((form_errors(form.isPlus)) ? ' is-invalid': (form.vars.data.isPlus ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.isPlus)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Confirmation de Candidature - Gala des PME</title>
+    <style>
+        body { margin: 0; padding: 0; background-color: #F8FAFC; color: #334155; font-family: 'Inter', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; width: 100% !important; height: 100% !important; }
+        table { border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        td { padding: 0; }
+        img { border: 0; -ms-interpolation-mode: bicubic; display: block; }
+        a { text-decoration: none; color: #C41230; }
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; color: #0F172A; margin: 0; }
+        p { margin: 0 0 16px 0; line-height: 1.6; font-size: 16px; }
+        .wrapper { width: 100%; table-layout: fixed; background-color: #F8FAFC; padding-bottom: 40px; }
+        .container { width: 100%; max-width: 600px; margin: 0 auto; background-color: #FFFFFF; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .header { background-color: #0F172A; padding: 40px 20px; text-align: center; background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); }
+        .content { padding: 40px 40px; }
+        .footer { background-color: #0F172A; padding: 30px 20px; text-align: center; color: #94A3B8; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .button { display: inline-block; background-color: #C41230; color: #FFFFFF !important; padding: 14px 28px; border-radius: 50px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; margin-top: 20px; text-decoration: none; }
+        .info-table { width: 100%; margin-bottom: 20px; border-collapse: collapse; }
+        .info-table td { padding: 12px 0; border-bottom: 1px solid #F1F5F9; font-size: 14px; color: #334155; }
+        .info-label { font-weight: bold; color: #64748B; width: 40%; }
+        .info-value { color: #0F172A; font-weight: 600; text-align: right; }
+        .highlight { color: #D4AF37; }
+        @media only screen and (max-width: 600px) {
+            .content { padding: 25px 20px; }
+            h1 { font-size: 24px !important; }
+            .container { width: 100% !important; border-radius: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <table role="presentation" class="container" align="center">
+            <tr>
+                <td class="header">
+                    <img src="logo.png" alt="Gala des PME" width="120" style="margin: 0 auto; display: block;" />
+                    <div style="margin-top: 15px; height: 1px; width: 40px; background-color: #C41230; margin-left: auto; margin-right: auto;"></div>
+                    <p style="color: #D4AF37; font-size: 10px; text-transform: uppercase; letter-spacing: 3px; margin-top: 10px; margin-bottom: 0;">L'Excellence Entrepreneuriale</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="content">
+                    <h1 style="text-align: center; margin-bottom: 10px; color: #C41230;">Candidature Confirmée</h1>
+                    <p style="text-align: center; color: #64748B; font-size: 14px; margin-bottom: 30px;">Dossier N° GPME{{candidature.id}}</p>
+                    
+                    <p>Cher(e) <strong>{{candidature.fullnameRepresentant}}</strong>,</p>
+                    
+                    <p>Nous accusons bonne réception de la candidature de <strong>{{candidature.nomEntreprise}}</strong> pour la 5ème édition du Gala des PME.</p>
+                    
+                    <p>Votre dossier a été transmis à notre jury d'experts pour évaluation. La qualité et la pertinence des informations fournies seront déterminantes pour la suite du processus.</p>
+                    
+                    <div style="background-color: #F8FAFC; border-radius: 8px; padding: 20px; margin: 30px 0;">
+                        <h3 style="font-size: 16px; margin-bottom: 15px; border-bottom: 2px solid #E2E8F0; padding-bottom: 10px;">Récapitulatif</h3>
+                        <table class="info-table">
+                            <tr>
+                                <td class="info-label">Catégorie(s)</td>
+                                <td class="info-value">{{candidature.categories | join(', ')}}</td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Entreprise</td>
+                                <td class="info-value">{{candidature.nomEntreprise}}</td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Secteur</td>
+                                <td class="info-value">{{candidature.secteurActivite}}</td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Date de création</td>
+                                <td class="info-value">{{candidature.dateCreation | date('d/m/Y')}}</td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">Ville</td>
+                                <td class="info-value">{{candidature.ville}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <p><strong>Prochaines étapes :</strong></p>
+                    <ul style="color: #334155; font-size: 14px; padding-left: 20px; margin-bottom: 30px;">
+                        <li style="margin-bottom: 8px;">Pré-sélection des dossiers (15 - 30 Mars)</li>
+                        <li style="margin-bottom: 8px;">Auditions des finalistes (Avril)</li>
+                        <li style="margin-bottom: 8px;">Annonce des nominés officiels (Mai)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="footer">
+                    <p style="margin-bottom: 10px; color: #FFFFFF; font-family: 'Playfair Display', serif; font-size: 16px;">Gala des PME 2026</p>
+                    <p>Sofitel Abidjan Hôtel Ivoire • Boulevard Hassan II</p>
+                    <p><a href="tel:+2252722482626" style="color: #94A3B8; text-decoration: none;">+225 27 22 48 26 26</a> • <a href="mailto:awards@galadespme.com" style="color: #94A3B8; text-decoration: none;">awards@galadespme.com</a></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

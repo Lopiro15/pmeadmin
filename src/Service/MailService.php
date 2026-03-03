@@ -2,7 +2,11 @@
 
 namespace App\Service;
 
+use App\Entity\Candidature;
+use App\Entity\Dossier;
+use App\Entity\Exposant;
 use App\Entity\Message;
+use App\Entity\Reservation;
 use App\Entity\Suggestion;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\MailerInterface;
@@ -35,20 +39,97 @@ class MailService
     /**
      * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
      */
-    public function sendSuggestionEmail(Suggestion $suggestion): void
+    public function sendExposantEmail(Exposant $exposant): void
     {
         $adresse = new Address($_ENV["MAILER_FROM"], name: $_ENV["MAILER_NAME"]);
         $email = (new TemplatedEmail())
             ->from($adresse)
-            ->to($_ENV["DESTINATAIRE_SUGGESTION_MAIL"])
-            ->subject("Suggestion")
-            ->htmlTemplate('emails/suggestion.html.twig')
+            ->to($exposant->getEmail())
+            ->subject("Demande d'Exposition")
+            ->htmlTemplate('emails/Exposant.html.twig')
             ->context([
-                "suggestion" => $suggestion,
+                "exposant" => $exposant,
             ]);
 
         $this->mailer->send($email);
     }
+
+    /**
+     * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
+     */
+    public function sendInscriptionEmail(Candidature $candidature): void
+    {
+        $adresse = new Address($_ENV["MAILER_FROM"], name: $_ENV["MAILER_NAME"]);
+        $email = (new TemplatedEmail())
+            ->from($adresse)
+            ->to($candidature->getEmail())
+            ->subject("Confirmation de candidature")
+            ->htmlTemplate('emails/inscription.html.twig')
+            ->context([
+                "candidature" => $candidature,
+            ]);
+
+        $this->mailer->send($email);
+    }
+
+
+    /**
+     * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
+     */
+    public function sendPartenaireEmail(Dossier $dossier): void
+    {
+        $adresse = new Address($_ENV["MAILER_FROM"], name: $_ENV["MAILER_NAME"]);
+        $email = (new TemplatedEmail())
+            ->from($adresse)
+            ->to($dossier->getEmail())
+            ->subject("Votre proposition de partenariat")
+            ->htmlTemplate('emails/partenaire.html.twig')
+            ->context([
+                "dossier" => $dossier,
+            ]);
+
+        $this->mailer->send($email);
+    }
+
+
+    /**
+     * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
+     */
+    public function sendSponsorEmail(Dossier $dossier): void
+    {
+        $adresse = new Address($_ENV["MAILER_FROM"], name: $_ENV["MAILER_NAME"]);
+        $email = (new TemplatedEmail())
+            ->from($adresse)
+            ->to($dossier->getEmail())
+            ->subject("Votre demande de sponsoring")
+            ->htmlTemplate('emails/sponsor.html.twig')
+            ->context([
+                "dossier" => $dossier,
+            ]);
+
+        $this->mailer->send($email);
+    }
+
+
+    /**
+     * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
+     */
+    public function sendTicketEmail(Reservation $reservation): void
+    {
+        $adresse = new Address($_ENV["MAILER_FROM"], name: $_ENV["MAILER_NAME"]);
+        $email = (new TemplatedEmail())
+            ->from($adresse)
+            ->to($reservation->getEmail())
+            ->subject("Confirmation de reservation")
+            ->htmlTemplate('emails/ticket.html.twig')
+            ->context([
+                "reservation" => $reservation,
+            ]);
+
+        $this->mailer->send($email);
+    }
+
+
     /**
      * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
      */

@@ -9,6 +9,7 @@ use ApiPlatform\Metadata\Post;
 use App\Repository\ReservationRepository;
 use App\State\ReservationProcessor;
 use App\Traits\Horodatage;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Attribute\Groups;
 
@@ -57,6 +58,9 @@ class Reservation
     #[ORM\Column]
     #[Groups(["read:reserv", "write:reserv"])]
     private ?int $quantity = null;
+
+    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 0)]
+    private ?string $total = null;
 
     public function getId(): ?int
     {
@@ -131,6 +135,18 @@ class Reservation
     public function setQuantity(int $quantity): static
     {
         $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    public function getTotal(): ?string
+    {
+        return $this->total;
+    }
+
+    public function setTotal(string $total): static
+    {
+        $this->total = $total;
 
         return $this;
     }

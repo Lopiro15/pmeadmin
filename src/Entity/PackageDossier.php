@@ -48,6 +48,12 @@ class PackageDossier
     #[ORM\Column(length: 255)]
     private ?string $code = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $isPopu = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $description = null;
+
     public function __construct()
     {
         $this->dossiers = new ArrayCollection();
@@ -135,4 +141,34 @@ class PackageDossier
 
         return $this;
     }
+
+    public function isPopu(): ?bool
+    {
+        return $this->isPopu;
+    }
+
+    public function setPopu(?bool $isPopu): static
+    {
+        $this->isPopu = $isPopu;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): static
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->getNom();
+    }
+
 }

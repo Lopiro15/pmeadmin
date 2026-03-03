@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Form\Award;
+
+use App\Entity\CritereAward;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class CritereAwardType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options): void
+    {
+        $builder
+            ->add('svg')
+            ->add('label')
+            ->add('description')
+        ;
+    }
+
+    public function configureOptions(OptionsResolver $resolver): void
+    {
+        $resolver->setDefaults([
+            'data_class' => CritereAward::class,
+        ]);
+    }
+}
