@@ -1,0 +1,444 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_modules_es_error_cause_js-node_modules_core-js_modules_es_error_-f2dd87.js",
+        "/build/vendors-node_modules_core-js_internals_advance-string-index_js-node_modules_core-js_internals-bed4a0.js",
+        "/build/vendors-node_modules_core-js_modules_es_date_to-json_js-node_modules_core-js_modules_es_promi-f0926d.js",
+        "/build/vendors-node_modules_sweetalert2_dist_sweetalert2_all_js-node_modules_vue-loader_dist_exportH-0c64e3.js",
+        "/build/app.js"
+      ],
+      "css": [
+        "/build/app.css"
+      ]
+    },
+    "js/advanced-form-elements": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/js/advanced-form-elements.js"
+      ]
+    },
+    "js/apexcharts": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/vendors-node_modules_core-js_modules_es_string_iterator_js-node_modules_core-js_modules_es_sy-0eab75.js",
+        "/build/vendors-node_modules_core-js_modules_es_error_cause_js-node_modules_core-js_modules_es_error_-f2dd87.js",
+        "/build/vendors-node_modules_core-js_internals_advance-string-index_js-node_modules_core-js_internals-bed4a0.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-063a3e.js",
+        "/build/vendors-node_modules_core-js_modules_es_parse-int_js-node_modules_core-js_modules_es_regexp_c-c3bb59.js",
+        "/build/vendors-node_modules_core-js_internals_string-repeat_js-node_modules_core-js_modules_es_array-f97213.js",
+        "/build/vendors-node_modules_core-js_modules_es_date_to-json_js-node_modules_core-js_modules_es_promi-f0926d.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_at_js-node_modules_core-js_modules_es_array_eve-3fb0f8.js",
+        "/build/js/apexcharts.js"
+      ]
+    },
+    "js/blog-post": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/js/blog-post.js"
+      ]
+    },
+    "js/calendar": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/vendors-node_modules_core-js_modules_es_string_iterator_js-node_modules_core-js_modules_es_sy-0eab75.js",
+        "/build/vendors-node_modules_core-js_modules_es_error_cause_js-node_modules_core-js_modules_es_error_-f2dd87.js",
+        "/build/js/calendar.js"
+      ]
+    },
+    "js/carousel": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/vendors-node_modules_core-js_modules_es_string_iterator_js-node_modules_core-js_modules_es_sy-0eab75.js",
+        "/build/vendors-node_modules_core-js_modules_es_error_cause_js-node_modules_core-js_modules_es_error_-f2dd87.js",
+        "/build/js/carousel.js"
+      ]
+    },
+    "js/chart-circle": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/vendors-node_modules_core-js_modules_es_string_iterator_js-node_modules_core-js_modules_es_sy-0eab75.js",
+        "/build/vendors-node_modules_core-js_modules_es_error_cause_js-node_modules_core-js_modules_es_error_-f2dd87.js",
+        "/build/vendors-node_modules_core-js_modules_es_date_to-primitive_js-node_modules_core-js_modules_es_-c4569b.js",
+        "/build/js/chart-circle.js"
+      ]
+    },
+    "js/chart.chartjs": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/vendors-node_modules_core-js_modules_es_string_iterator_js-node_modules_core-js_modules_es_sy-0eab75.js",
+        "/build/vendors-node_modules_core-js_modules_es_error_cause_js-node_modules_core-js_modules_es_error_-f2dd87.js",
+        "/build/js/chart.chartjs.js"
+      ]
+    },
+    "js/chart.echarts": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/chart.echarts.js"
+      ]
+    },
+    "js/chart.flot": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/chart.flot.js"
+      ]
+    },
+    "js/chart.flot.sampledata": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/js/chart.flot.sampledata.js"
+      ]
+    },
+    "js/chart.morris": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/chart.morris.js"
+      ]
+    },
+    "js/chart.peity": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/chart.peity.js"
+      ]
+    },
+    "js/chart.sparkline": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/chart.sparkline.js"
+      ]
+    },
+    "js/chat": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/chat.js"
+      ]
+    },
+    "js/check-all-mail": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/js/check-all-mail.js"
+      ]
+    },
+    "js/checkout-jquery-steps": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/checkout-jquery-steps.js"
+      ]
+    },
+    "js/contacts": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/contacts.js"
+      ]
+    },
+    "js/crypto-buysell": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/vendors-node_modules_core-js_modules_es_string_iterator_js-node_modules_core-js_modules_es_sy-0eab75.js",
+        "/build/vendors-node_modules_core-js_modules_es_error_cause_js-node_modules_core-js_modules_es_error_-f2dd87.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_for-each_js-node_modules_core-js_modules_es_dat-7df6c4.js",
+        "/build/js/crypto-buysell.js"
+      ]
+    },
+    "js/crypto-dashboard": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_apexcharts_dist_apexcharts_common_js-node_modules_core-js_modules_es_dat-95afce.js",
+        "/build/js/crypto-dashboard.js"
+      ]
+    },
+    "js/crypto-exchange": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/crypto-exchange.js"
+      ]
+    },
+    "js/crypto-market": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/crypto-market.js"
+      ]
+    },
+    "js/crypto-transaction": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/crypto-transaction.js"
+      ]
+    },
+    "js/custom": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/vendors-node_modules_core-js_modules_es_string_iterator_js-node_modules_core-js_modules_es_sy-0eab75.js",
+        "/build/vendors-node_modules_core-js_internals_advance-string-index_js-node_modules_core-js_internals-bed4a0.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_index-of_js-node_modules_core-js_modules_es_arr-cb40da.js",
+        "/build/js/custom.js"
+      ]
+    },
+    "js/switcher-styles": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/vendors-node_modules_core-js_modules_es_string_iterator_js-node_modules_core-js_modules_es_sy-0eab75.js",
+        "/build/vendors-node_modules_core-js_modules_es_error_cause_js-node_modules_core-js_modules_es_error_-f2dd87.js",
+        "/build/vendors-node_modules_core-js_internals_advance-string-index_js-node_modules_core-js_internals-bed4a0.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-063a3e.js",
+        "/build/vendors-node_modules_core-js_modules_es_parse-int_js-node_modules_core-js_modules_es_regexp_c-c3bb59.js",
+        "/build/vendors-node_modules_core-js_internals_string-repeat_js-node_modules_core-js_modules_es_array-f97213.js",
+        "/build/assets_js_switcher-styles_js-assets_js_themeColors_js.js",
+        "/build/js/switcher-styles.js"
+      ]
+    },
+    "js/ecommerce-dashboard": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_apexcharts_dist_apexcharts_common_js-node_modules_core-js_modules_es_dat-95afce.js",
+        "/build/js/ecommerce-dashboard.js"
+      ]
+    },
+    "js/file-detail": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/vendors-node_modules_core-js_modules_es_string_iterator_js-node_modules_core-js_modules_es_sy-0eab75.js",
+        "/build/vendors-node_modules_core-js_modules_es_error_cause_js-node_modules_core-js_modules_es_error_-f2dd87.js",
+        "/build/js/file-detail.js"
+      ]
+    },
+    "js/form-editor": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/form-editor.js"
+      ]
+    },
+    "js/form-elements": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_advance-string-index_js-node_modules_core-js_internals-bed4a0.js",
+        "/build/vendors-node_modules_core-js_internals_object-create_js-node_modules_core-js_internals_string-cebfbe.js",
+        "/build/js/form-elements.js"
+      ]
+    },
+    "js/form-validation": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/form-validation.js"
+      ]
+    },
+    "js/form-vallidations": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_for-each_js-node_modules_core-js_modules_es_arr-9a33b2.js",
+        "/build/js/form-vallidations.js"
+      ]
+    },
+    "js/form-wizard": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/form-wizard.js"
+      ]
+    },
+    "js/gallery": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/gallery.js"
+      ]
+    },
+    "js/generate-otp": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/js/generate-otp.js"
+      ]
+    },
+    "js/handleCounter": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/vendors-node_modules_core-js_modules_es_parse-int_js-node_modules_core-js_modules_es_regexp_c-c3bb59.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in-accessor_js-node_modules_core-js_inter-6c1ed7.js",
+        "/build/js/handleCounter.js"
+      ]
+    },
+    "js/index": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/index.js"
+      ]
+    },
+    "js/jquery.vmap.sampledata": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/jquery.vmap.sampledata.js"
+      ]
+    },
+    "js/mapelmaps": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/vendors-node_modules_core-js_modules_es_string_iterator_js-node_modules_core-js_modules_es_sy-0eab75.js",
+        "/build/vendors-node_modules_core-js_modules_es_error_cause_js-node_modules_core-js_modules_es_error_-f2dd87.js",
+        "/build/js/mapelmaps.js"
+      ]
+    },
+    "js/modal": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_advance-string-index_js-node_modules_core-js_internals-bed4a0.js",
+        "/build/vendors-node_modules_core-js_internals_object-create_js-node_modules_core-js_internals_string-98dad5.js",
+        "/build/js/modal.js"
+      ]
+    },
+    "js/picker": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/vendors-node_modules_core-js_modules_es_string_iterator_js-node_modules_core-js_modules_es_sy-0eab75.js",
+        "/build/vendors-node_modules_core-js_modules_es_error_cause_js-node_modules_core-js_modules_es_error_-f2dd87.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-063a3e.js",
+        "/build/js/picker.js"
+      ]
+    },
+    "js/popover": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/popover.js"
+      ]
+    },
+    "js/select2": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_for-each_js-node_modules_core-js_modules_es_obj-7bb33f.js",
+        "/build/js/select2.js"
+      ]
+    },
+    "js/sticky": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/sticky.js"
+      ]
+    },
+    "js/summernote": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/summernote.js"
+      ]
+    },
+    "js/sweet-alert": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/sweet-alert.js"
+      ]
+    },
+    "js/table-data": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/table-data.js"
+      ]
+    },
+    "js/tabs": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/tabs.js"
+      ]
+    },
+    "js/themeColors": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_define-built-in_js.js",
+        "/build/vendors-node_modules_core-js_internals_export_js.js",
+        "/build/vendors-node_modules_core-js_internals_add-to-unscopables_js-node_modules_core-js_internals_a-464164.js",
+        "/build/vendors-node_modules_core-js_modules_es_string_iterator_js-node_modules_core-js_modules_es_sy-0eab75.js",
+        "/build/vendors-node_modules_core-js_modules_es_error_cause_js-node_modules_core-js_modules_es_error_-f2dd87.js",
+        "/build/vendors-node_modules_core-js_internals_advance-string-index_js-node_modules_core-js_internals-bed4a0.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-063a3e.js",
+        "/build/vendors-node_modules_core-js_modules_es_parse-int_js-node_modules_core-js_modules_es_regexp_c-c3bb59.js",
+        "/build/vendors-node_modules_core-js_internals_string-repeat_js-node_modules_core-js_modules_es_array-f97213.js",
+        "/build/assets_js_switcher-styles_js-assets_js_themeColors_js.js",
+        "/build/js/themeColors.js"
+      ]
+    },
+    "js/timline": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/timline.js"
+      ]
+    },
+    "js/tooltip": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/tooltip.js"
+      ]
+    },
+    "js/vector-map": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/vector-map.js"
+      ]
+    },
+    "js/widgets": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/widgets.js"
+      ]
+    },
+    "switcher/switcher": {
+      "js": [
+        "/build/runtime.js",
+        "/build/switcher/switcher.js"
+      ]
+    }
+  }
+}
