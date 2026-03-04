@@ -1,0 +1,69 @@
+<fieldset>
+    <legend>Information Section Epicentre</legend>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">titre Noir</label>
+                {{ form_widget(form.titreBlack,{attr: {class: 'form-control' ~ ((form_errors(form.titreBlack)) ? ' is-invalid': (form.vars.data.titreBlack ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.titreBlack)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre gris</label>
+                {{ form_widget(form.titreGris,{attr: {class: 'form-control' ~ ((form_errors(form.titreGris)) ? ' is-invalid': (form.vars.data.titreGris ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.titreGris)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Adresse longue</label>
+                {{ form_widget(form.adresseLongue,{attr: {class: 'form-control' ~ ((form_errors(form.adresseLongue)) ? ' is-invalid': (form.vars.data.adresseLongue ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.adresseLongue)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Lien sur la carte</label>
+                {{ form_widget(form.lienCarte,{attr: {class: 'form-control' ~ ((form_errors(form.lienCarte)) ? ' is-invalid': (form.vars.data.lienCarte ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.lienCarte)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Telephone</label>
+                {{ form_widget(form.telephone,{attr: {class: 'form-control' ~ ((form_errors(form.telephone)) ? ' is-invalid': (form.vars.data.telephone ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.telephone)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">email</label>
+                {{ form_widget(form.email,{attr: {class: 'form-control' ~ ((form_errors(form.email)) ? ' is-invalid': (form.vars.data.email ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.email)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Description Infoline</label>
+                {{ form_widget(form.descriptionInfoline,{attr: {class: 'form-control' ~ ((form_errors(form.descriptionInfoline)) ? ' is-invalid': (form.vars.data.descriptionInfoline ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.descriptionInfoline)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+

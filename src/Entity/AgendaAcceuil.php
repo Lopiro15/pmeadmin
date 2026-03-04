@@ -2,12 +2,23 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\AgendaAcceuilRepository;
 use App\Traits\Horodatage;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:agendaAccueil']
+)]
 #[ORM\Entity(repositoryClass: AgendaAcceuilRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 class AgendaAcceuil
@@ -20,12 +31,15 @@ class AgendaAcceuil
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:agendaAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $badge = null;
 
+    #[Groups(['read:agendaAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreBlack = null;
 
+    #[Groups(['read:agendaAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreGris = null;
 

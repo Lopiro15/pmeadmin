@@ -2,12 +2,23 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\PartenaireAcceuilRepository;
 use App\Traits\Horodatage;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:partenaireAccueil']
+)]
 #[ORM\Entity(repositoryClass: PartenaireAcceuilRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 class PartenaireAcceuil
@@ -20,27 +31,35 @@ class PartenaireAcceuil
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:partenaireAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $miniBadge = null;
 
+    #[Groups(['read:partenaireAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreBlanc = null;
 
+    #[Groups(['read:partenaireAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreGris = null;
 
+    #[Groups(['read:partenaireAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $cardSvg = null;
 
+    #[Groups(['read:partenaireAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $cardTitre = null;
 
+    #[Groups(['read:partenaireAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $cardDescription = null;
 
+    #[Groups(['read:partenaireAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $cardButtonLabel = null;
 
+    #[Groups(['read:partenaireAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $cardButtonLink = null;
 

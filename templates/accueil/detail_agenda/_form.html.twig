@@ -1,0 +1,60 @@
+<fieldset>
+    <legend>Information bloc lieu</legend>
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Mini titre</label>
+                {{ form_widget(form.badge,{attr: {class: 'form-control' ~ ((form_errors(form.badge)) ? ' is-invalid' : (form.vars.data.badge ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.badge)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Nom lieu</label>
+                {{ form_widget(form.lieu,{attr: {class: 'form-control' ~ ((form_errors(form.lieu)) ? ' is-invalid' : (form.vars.data.lieu ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.lieu)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre</label>
+                {{ form_widget(form.titre,{attr: {class: 'form-control' ~ ((form_errors(form.titre)) ? ' is-invalid' : (form.vars.data.titre ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.titre)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                {{ form_widget(form.description,{attr: {class: 'content ' ~ ((form_errors(form.description)) ? ' is-invalid': (form.vars.data.description ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.description)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Heure debut</label>
+                {{ form_widget(form.debut,{attr: {class: 'form-control' ~ ((form_errors(form.debut)) ? ' is-invalid' : (form.vars.data.debut ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.debut)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Heure fin</label>
+                {{ form_widget(form.fin,{attr: {class: 'form-control' ~ ((form_errors(form.fin)) ? ' is-invalid' : (form.vars.data.fin ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.fin)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>

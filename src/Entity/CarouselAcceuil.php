@@ -22,6 +22,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 )]
 #[ORM\Entity(repositoryClass: CarouselAcceuilRepository::class)]
 #[ORM\HasLifecycleCallbacks]
+#[Vich\Uploadable]
 class CarouselAcceuil
 {
 
@@ -121,7 +122,7 @@ class CarouselAcceuil
         return $this->fileName;
     }
 
-    public function setFileName(string $fileName): static
+    public function setFileName(?string $fileName): static
     {
         $this->fileName = $fileName;
 

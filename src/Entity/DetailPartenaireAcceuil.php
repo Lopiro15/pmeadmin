@@ -2,15 +2,27 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\DetailPartenaireAcceuilRepository;
 use App\Traits\Horodatage;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:detailPartenaireAccueil']
+)]
 #[ORM\Entity(repositoryClass: DetailPartenaireAcceuilRepository::class)]
 #[ORM\HasLifecycleCallbacks]
+#[Vich\Uploadable]
 class DetailPartenaireAcceuil
 {
 
@@ -21,6 +33,7 @@ class DetailPartenaireAcceuil
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:detailPartenaireAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $labelEntreprise = null;
 
@@ -35,6 +48,7 @@ class DetailPartenaireAcceuil
     )]
     private ?File $file = null;
 
+    #[Groups(['read:detailPartenaireAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $filePath = null;
 
@@ -63,7 +77,7 @@ class DetailPartenaireAcceuil
         return $this->fileName;
     }
 
-    public function setFileName(string $fileName): static
+    public function setFileName(?string $fileName): static
     {
         $this->fileName = $fileName;
 

@@ -22,6 +22,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 )]
 #[ORM\Entity(repositoryClass: ThematiqueAcceuilRepository::class)]
 #[ORM\HasLifecycleCallbacks]
+#[Vich\Uploadable]
 class ThematiqueAcceuil
 {
 
@@ -170,7 +171,7 @@ class ThematiqueAcceuil
         return $this->fileName;
     }
 
-    public function setFileName(string $fileName): static
+    public function setFileName(?string $fileName): static
     {
         $this->fileName = $fileName;
 

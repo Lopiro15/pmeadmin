@@ -21,6 +21,7 @@ class PilierMissionAcceuilType extends AbstractType
             ->add('description')
             ->add('svg')
             ->add('file', VichImageType::class, [
+                'required' => false,
                 'allow_delete' => true,
                 'download_uri' => false,
                 'image_uri' => false,

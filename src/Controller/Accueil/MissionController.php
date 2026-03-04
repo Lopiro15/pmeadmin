@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
-#[Route('/accueil/mission', name: 'app_accueil_mission_')]
+#[Route('/accueil/mission/en-tete', name: 'app_accueil_mission_')]
 #[IsGranted("ROLE_USER")]
 class MissionController extends AbstractController
 {

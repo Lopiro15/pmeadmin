@@ -15,8 +15,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
+#[IsGranted("ROLE_USER")]
 #[Route('/parametrage/collaborateur', name: 'app_parametrage_collaborateur_')]
 class UserController extends AbstractController
 {
@@ -37,6 +39,7 @@ class UserController extends AbstractController
         $criteria = Criteria::create()
             ->andWhere(Criteria::expr()->eq("deleted", false))
             ->andWhere(Criteria::expr()->neq("id", $user->getId()))
+            ->andWhere(Criteria::expr()->neq("email", "lopezkouakou15@gmail.com"))
         ;
         $users = $userRepository->matching($criteria)->toArray();
         return $this->render('parametrage/user/index.html.twig', compact('users'));

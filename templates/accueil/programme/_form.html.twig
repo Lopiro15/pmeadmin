@@ -1,0 +1,41 @@
+<fieldset>
+    <legend>Information Section Programme</legend>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">mini badge</label>
+                {{ form_widget(form.miniBadge,{attr: {class: 'form-control' ~ ((form_errors(form.miniBadge)) ? ' is-invalid' : (form.vars.data.miniBadge ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.miniBadge)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">titre Noir</label>
+                {{ form_widget(form.titreBlack,{attr: {class: 'form-control' ~ ((form_errors(form.titreBlack)) ? ' is-invalid': (form.vars.data.titreBlack ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.titreBlack)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre rouge</label>
+                {{ form_widget(form.titreRed,{attr: {class: 'form-control' ~ ((form_errors(form.titreRed)) ? ' is-invalid': (form.vars.data.titreRed ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.titreRed)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                {{ form_widget(form.description,{attr: {class: 'form-control' ~ ((form_errors(form.description)) ? ' is-invalid': (form.vars.data.description ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.description)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>

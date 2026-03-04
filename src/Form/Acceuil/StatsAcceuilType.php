@@ -14,7 +14,7 @@ class StatsAcceuilType extends AbstractType
         $builder
             ->add('valeur')
             ->add('label')
-            ->add('isPlus')
+            ->add('plus')
         ;
     }
 

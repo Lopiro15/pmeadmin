@@ -19,6 +19,7 @@ class BanniereAwardType extends AbstractType
             ->add('titreRouge')
             ->add('description')
             ->add('imageFile', VichImageType::class, [
+                'required' => false,
                 'allow_delete' => true,
                 'download_uri' => false,
                 'image_uri' => false,

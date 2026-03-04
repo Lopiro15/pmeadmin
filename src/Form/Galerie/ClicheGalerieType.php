@@ -18,6 +18,7 @@ class ClicheGalerieType extends AbstractType
         $builder
             ->add('legende')
             ->add('imageFile', VichImageType::class, [
+                'required' => false,
                 'allow_delete' => true,
                 'download_uri' => false,
                 'image_uri' => false,

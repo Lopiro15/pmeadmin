@@ -2,9 +2,20 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\EpicentreAcceuilRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:epicentreAccueil']
+)]
 #[ORM\Entity(repositoryClass: EpicentreAcceuilRepository::class)]
 class EpicentreAcceuil
 {
@@ -13,24 +24,31 @@ class EpicentreAcceuil
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:epicentreAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreBlack = null;
 
+    #[Groups(['read:epicentreAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreGris = null;
 
+    #[Groups(['read:epicentreAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $adresseLongue = null;
 
+    #[Groups(['read:epicentreAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $lienCarte = null;
 
+    #[Groups(['read:epicentreAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $descriptionInfoline = null;
 
+    #[Groups(['read:epicentreAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $telephone = null;
 
+    #[Groups(['read:epicentreAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $email = null;
 

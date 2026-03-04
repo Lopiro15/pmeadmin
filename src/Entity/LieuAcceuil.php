@@ -2,15 +2,27 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\LieuAcceuilRepository;
 use App\Traits\Horodatage;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:lieuAccueil']
+)]
 #[ORM\Entity(repositoryClass: LieuAcceuilRepository::class)]
 #[ORM\HasLifecycleCallbacks]
+#[Vich\Uploadable]
 class LieuAcceuil
 {
 
@@ -21,12 +33,15 @@ class LieuAcceuil
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:lieuAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $miniTitre = null;
 
+    #[Groups(['read:lieuAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $lieu = null;
 
+    #[Groups(['read:lieuAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $miniadresse = null;
 
@@ -41,6 +56,7 @@ class LieuAcceuil
     )]
     private ?File $file = null;
 
+    #[Groups(['read:lieuAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $filePath = null;
 
@@ -90,7 +106,7 @@ class LieuAcceuil
         return $this->fileName;
     }
 
-    public function setFileName(string $fileName): static
+    public function setFileName(?string $fileName): static
     {
         $this->fileName = $fileName;
 

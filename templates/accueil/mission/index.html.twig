@@ -10,7 +10,7 @@
         <div class="col-10">
             <div class="card custom-card">
                 <div class="card-header  p-3 tx-semibold tx-white bg-primary">
-                    Liste des stats
+                    Section mission
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -31,9 +31,9 @@
                                     <th>{{ a.titreBlanc }}</th>
                                     <th>{{ a.titreRouge }}</th>
                                     <th>{{ a.description }}</th>
-                                    <th class="text-center">
-                                        <a href="{{ path('app_accueil_mission_edit', {'id' : a.id}) }}">
-                                            <i class="fa fa-edit me-1 ms-1"></i>
+                                    <th class="text-center d-flex justify-content-center">
+                                        <a href="{{ path('app_accueil_mission_edit', {'id' : a.id}) }}" class="me-1 ms-1 btn btn-sm btn-primary">
+                                            <i class="fa fa-edit"></i>
                                         </a>
                                         {{ include('accueil/mission/_delete_form.html.twig' , {'article': a}) }}
                                     </th>

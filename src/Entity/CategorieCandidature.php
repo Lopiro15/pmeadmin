@@ -23,6 +23,7 @@ use Symfony\Component\Validator\Constraints as Assert;
     ],
 )]
 #[ORM\HasLifecycleCallbacks]
+#[Vich\Uploadable]
 class CategorieCandidature
 {
 

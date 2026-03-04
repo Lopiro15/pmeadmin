@@ -30,10 +30,10 @@
                                     <th class="text-center">{{ index + 1 }}</th>
                                     <th>{{ a.label }}</th>
                                     <th>{{ a.valeur }}</th>
-                                    <th>{{ a.isPlus ? "OUI" : "NON" }}</th>
-                                    <th class="text-center">
-                                        <a href="{{ path('app_accueil_stats_edit', {'id' : a.id}) }}">
-                                            <i class="fa fa-edit me-1 ms-1"></i>
+                                    <th>{{ a.plus ? "OUI" : "NON" }}</th>
+                                    <th class="text-center d-flex justify-content-center">
+                                        <a href="{{ path('app_accueil_stats_edit', {'id' : a.id}) }}" class="me-1 ms-1 btn btn-sm btn-primary">
+                                            <i class="fa fa-edit "></i>
                                         </a>
                                         {{ include('accueil/stats/_delete_form.html.twig' , {'article': a}) }}
                                     </th>

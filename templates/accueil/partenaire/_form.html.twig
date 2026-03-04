@@ -1,0 +1,84 @@
+<fieldset>
+    <legend>Information Section Partenaire</legend>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">mini badge</label>
+                {{ form_widget(form.miniBadge,{attr: {class: 'form-control' ~ ((form_errors(form.miniBadge)) ? ' is-invalid' : (form.vars.data.miniBadge ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.miniBadge)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">titre Blanc</label>
+                {{ form_widget(form.titreBlanc,{attr: {class: 'form-control' ~ ((form_errors(form.titreBlanc)) ? ' is-invalid': (form.vars.data.titreBlanc ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.titreBlanc)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre gris</label>
+                {{ form_widget(form.titreGris,{attr: {class: 'form-control' ~ ((form_errors(form.titreGris)) ? ' is-invalid': (form.vars.data.titreGris ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.titreGris)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+<br>
+<fieldset>
+    <legend>Information Carte Section Partenaire</legend>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Icone svg</label>
+                {{ form_widget(form.cardSvg,{attr: {class: 'form-control' ~ ((form_errors(form.cardSvg)) ? ' is-invalid' : (form.vars.data.cardSvg ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.cardSvg)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">titre</label>
+                {{ form_widget(form.cardTitre,{attr: {class: 'form-control' ~ ((form_errors(form.cardTitre)) ? ' is-invalid': (form.vars.data.cardTitre ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.cardTitre)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                {{ form_widget(form.cardDescription,{attr: {class: 'form-control' ~ ((form_errors(form.cardDescription)) ? ' is-invalid': (form.vars.data.cardDescription ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.cardDescription)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Texte bouton</label>
+                {{ form_widget(form.cardButtonLabel,{attr: {class: 'form-control' ~ ((form_errors(form.cardButtonLabel)) ? ' is-invalid': (form.vars.data.cardButtonLabel ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.cardButtonLabel)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Lien bouton</label>
+                {{ form_widget(form.cardButtonLink,{attr: {class: 'form-control' ~ ((form_errors(form.cardButtonLink)) ? ' is-invalid': (form.vars.data.cardButtonLink ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.cardButtonLink)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+

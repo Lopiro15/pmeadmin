@@ -34,7 +34,7 @@ class StatsAcceuil
 
     #[ORM\Column(nullable: true)]
     #[Groups(['read:statAccueil'])]
-    private ?bool $isPlus = null;
+    private ?bool $plus = null;
 
     public function getId(): ?int
     {
@@ -67,12 +67,12 @@ class StatsAcceuil
 
     public function isPlus(): ?bool
     {
-        return $this->isPlus;
+        return $this->plus;
     }
 
     public function setPlus(?bool $isPlus): static
     {
-        $this->isPlus = $isPlus;
+        $this->plus = $isPlus;
 
         return $this;
     }

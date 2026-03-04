@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
-#[Route('/accueil/pilier', name: 'app_accueil_pilier_')]
+#[Route('/accueil/mission/pilier', name: 'app_accueil_pilier_')]
 #[IsGranted("ROLE_USER")]
 class PilierController extends AbstractController
 {

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+    <div class="row row-sm justify-content-center mt-5">
+        <div class="col-10">
+            <div class="card custom-card">
+                <div class="card-header  p-3 tx-semibold tx-white bg-primary">
+                    Détail agenda
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
+                            <thead>
+                            <tr>
+                                <th class="text-center">badge</th>
+                                <th class="text-center">titre</th>
+                                <th class="text-center">lieu</th>
+                                <th class="text-center">debut</th>
+                                <th class="text-center">fin</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for index, a in articles %}
+                                <tr>
+                                    <th class="text-center">{{ a.badge | raw }}</th>
+                                    <th>{{ a.titre }}</th>
+                                    <th>{{ a.lieu }}</th>
+                                    <th>{{ a.debut | date('H:i') }}</th>
+                                    <th>{{ a.fin | date('H:i') }}</th>
+                                    <th class="text-center">
+                                        <a href="{{ path('app_accueil_detail_agenda_show', {'id' : a.id}) }}">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </th>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <a href="{{ path('app_accueil_detail_agenda_new') }}" class="btn btn-primary float-end">Nouveau</a>
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+{% endblock %}
+

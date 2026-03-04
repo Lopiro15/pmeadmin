@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row row-sm justify-content-center mt-5">
+        <div class="col-xl-10">
+            <div class="card custom-card overflow-hidden">
+                <div class="px-4 pt-4">
+                    <a ><img src="{{ vich_uploader_asset(article, 'file') }}" alt="img" class="rounded-6 w-100"></a>
+                </div>
+                <div class="card-body">
+                    <h4>{{ article.labelEntreprise }}</h4>
+                </div>
+                <div class="card-footer">
+                    {{ include('accueil/detail_partenaire/_delete_form.html.twig') }}
+                    <a href="{{ path('app_accueil_detail_partenaire_edit', {'id': article.id}) }}" class="btn btn-primary float-end me-2"> <i class="fas fa-edit"></i> Modifier</a>
+                    <a href="{{ path('app_accueil_detail_partenaire_index') }}" class="btn btn-primary float-end me-2"> <i class="fas fa-arrow-circle-left"></i> Retour</a>
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <!--end col-->
+    </div>
+{% endblock %}
+
+
+
+

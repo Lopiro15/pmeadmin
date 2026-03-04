@@ -18,6 +18,7 @@ class BanniereGalerieType extends AbstractType
             ->add('titreBlanc')
             ->add('titreRouge')
             ->add('imageFile', VichImageType::class, [
+                'required' => false,
                 'allow_delete' => true,
                 'download_uri' => false,
                 'image_uri' => false,

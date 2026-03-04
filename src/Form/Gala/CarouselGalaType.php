@@ -21,6 +21,7 @@ class CarouselGalaType extends AbstractType
             ->add('annee')
             ->add('labelAnnee')
             ->add('file', VichImageType::class, [
+                'required' => false,
                 'allow_delete' => true,
                 'download_uri' => false,
                 'image_uri' => false,

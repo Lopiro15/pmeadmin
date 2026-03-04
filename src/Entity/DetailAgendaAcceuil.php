@@ -2,11 +2,25 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Metadata\ApiFilter;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\DetailAgendaAcceuilRepository;
 use App\Traits\Horodatage;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:detailAgenda']
+)]
+#[ApiFilter(OrderFilter::class, properties: ["debut"])]
 #[ORM\Entity(repositoryClass: DetailAgendaAcceuilRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 class DetailAgendaAcceuil
@@ -19,21 +33,27 @@ class DetailAgendaAcceuil
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:detailAgenda'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $badge = null;
 
+    #[Groups(['read:detailAgenda'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titre = null;
 
+    #[Groups(['read:detailAgenda'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
 
+    #[Groups(['read:detailAgenda'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $lieu = null;
 
+    #[Groups(['read:detailAgenda'])]
     #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $debut = null;
 
+    #[Groups(['read:detailAgenda'])]
     #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $fin = null;
 

@@ -22,6 +22,7 @@ class HeritageGalaType extends AbstractType
             ->add('card1descriptionblanc')
             ->add('card1descriptiongris2')
             ->add('card1ImageFile', VichImageType::class, [
+                'required' => false,
                 'allow_delete' => true,
                 'download_uri' => false,
                 'image_uri' => false,
@@ -43,6 +44,7 @@ class HeritageGalaType extends AbstractType
             ->add('card3Titre')
             ->add('card3Description')
             ->add('card3ImageFondFile', VichImageType::class, [
+                'required' => false,
                 'allow_delete' => true,
                 'download_uri' => false,
                 'image_uri' => false,
@@ -60,6 +62,7 @@ class HeritageGalaType extends AbstractType
             ->add('card4TitreBlanc')
             ->add('card4LabelGris')
             ->add('card4ImageFile', VichImageType::class, [
+                'required' => false,
                 'allow_delete' => true,
                 'download_uri' => false,
                 'image_uri' => false,

@@ -20,11 +20,11 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="mb-3">
-                <label class="form-label">Ajouter le plus?</label>
-                {{ form_widget(form.isPlus,{attr: {class: 'form-control' ~ ((form_errors(form.isPlus)) ? ' is-invalid': (form.vars.data.isPlus ? ' is-valid' : '' ))}}) }}
+            <div class="form-check mb-3">
+                {{ form_widget(form.plus,{attr: {class: 'form-check-input' ~ ((form_errors(form.plus)) ? ' is-invalid': (form.vars.data.plus ? ' is-valid' : '' ))}}) }}
+                <label class="form-check-label" for="stats_acceuil_plus">Ajouter le plus?</label>
                 <div class="invalid-feedback">
-                    {{form_errors(form.isPlus)}}
+                    {{form_errors(form.plus)}}
                 </div>
             </div>
         </div>

@@ -2,10 +2,21 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\ProgrammeAcceuilRepository;
 use App\Traits\Horodatage;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:programmeAccueil']
+)]
 #[ORM\Entity(repositoryClass: ProgrammeAcceuilRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 class ProgrammeAcceuil
@@ -18,15 +29,19 @@ class ProgrammeAcceuil
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:programmeAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $miniBadge = null;
 
+    #[Groups(['read:programmeAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreBlack = null;
 
+    #[Groups(['read:programmeAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreRed = null;
 
+    #[Groups(['read:programmeAccueil'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
 
