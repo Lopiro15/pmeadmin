@@ -46,7 +46,7 @@ class MailService
             ->from($adresse)
             ->to($exposant->getEmail())
             ->subject("Demande d'Exposition")
-            ->htmlTemplate('emails/Exposant.html.twig')
+            ->htmlTemplate('emails/formulaire/Exposant.html.twig')
             ->context([
                 "exposant" => $exposant,
             ]);
@@ -64,7 +64,7 @@ class MailService
             ->from($adresse)
             ->to($candidature->getEmail())
             ->subject("Confirmation de candidature")
-            ->htmlTemplate('emails/inscription.html.twig')
+            ->htmlTemplate('emails/formulaire/inscription.html.twig')
             ->context([
                 "candidature" => $candidature,
             ]);
@@ -83,7 +83,7 @@ class MailService
             ->from($adresse)
             ->to($dossier->getEmail())
             ->subject("Votre proposition de partenariat")
-            ->htmlTemplate('emails/partenaire.html.twig')
+            ->htmlTemplate('emails/formulaire/partenaire.html.twig')
             ->context([
                 "dossier" => $dossier,
             ]);
@@ -102,7 +102,7 @@ class MailService
             ->from($adresse)
             ->to($dossier->getEmail())
             ->subject("Votre demande de sponsoring")
-            ->htmlTemplate('emails/sponsor.html.twig')
+            ->htmlTemplate('emails/formulaire/sponsor.html.twig')
             ->context([
                 "dossier" => $dossier,
             ]);
@@ -121,7 +121,7 @@ class MailService
             ->from($adresse)
             ->to($reservation->getEmail())
             ->subject("Confirmation de reservation")
-            ->htmlTemplate('emails/ticket.html.twig')
+            ->htmlTemplate('emails/formulaire/ticket.html.twig')
             ->context([
                 "reservation" => $reservation,
             ]);
