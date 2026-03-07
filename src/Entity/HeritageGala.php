@@ -2,13 +2,24 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\HeritageGalaRepository;
 use App\Traits\Horodatage;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:heritageGala']
+)]
 #[ORM\Entity(repositoryClass: HeritageGalaRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[Vich\Uploadable]
@@ -22,30 +33,38 @@ class HeritageGala
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $badge = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreBlanc = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $sousTitre = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card1titre = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card1descriptiongris = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card1descriptionblanc = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card1descriptiongris2 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card1ImageName = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card1ImagePath = null;
 
@@ -57,30 +76,38 @@ class HeritageGala
     )]
     private ?File $card1ImageFile = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(nullable: true)]
     private ?int $card2Nb = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card2Label = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card2LabelRouge = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card2Description = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card3TitreMini = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card3Titre = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card3Description = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card3ImageFondName = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card3ImageFondPath = null;
 
@@ -92,18 +119,22 @@ class HeritageGala
     )]
     private ?File $card3ImageFondFile = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card4TitreOr = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card4TitreBlanc = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card4LabelGris = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card4ImageName = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card4ImagePath = null;
 
@@ -115,9 +146,11 @@ class HeritageGala
     )]
     private ?File $card4ImageFile = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(nullable: true)]
     private ?int $card5Nb = null;
 
+    #[Groups(['read:heritageGala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $card5label = null;
 

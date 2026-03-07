@@ -1,0 +1,232 @@
+<fieldset>
+    <legend>Information Section</legend>
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">badge</label>
+                {{ form_widget(form.badge,{attr: {class: 'form-control' ~ ((form_errors(form.badge)) ? ' is-invalid' : (form.vars.data.badge ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.badge)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre</label>
+                {{ form_widget(form.titreBlanc,{attr: {class: 'form-control' ~ ((form_errors(form.titreBlanc)) ? ' is-invalid': (form.vars.data.titreBlanc ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.titreBlanc)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Sous Titre</label>
+                {{ form_widget(form.sousTitre,{attr: {class: 'form-control' ~ ((form_errors(form.sousTitre)) ? ' is-invalid': (form.vars.data.sousTitre ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.sousTitre)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+<br>
+<fieldset>
+    <legend>Bloc 1</legend>
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre</label>
+                {{ form_widget(form.card1titre,{attr: {class: 'form-control' ~ ((form_errors(form.card1titre)) ? ' is-invalid' : (form.vars.data.card1titre ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card1titre)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Description gris</label>
+                {{ form_widget(form.card1descriptiongris,{attr: {class: 'form-control' ~ ((form_errors(form.card1descriptiongris)) ? ' is-invalid': (form.vars.data.card1descriptiongris ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card1descriptiongris)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Description blanc</label>
+                {{ form_widget(form.card1descriptionblanc,{attr: {class: 'content ' ~ ((form_errors(form.card1descriptionblanc)) ? ' is-invalid': (form.vars.data.card1descriptionblanc ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card1descriptionblanc)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Description gris 2</label>
+                {{ form_widget(form.card1descriptiongris2,{attr: {class: 'content ' ~ ((form_errors(form.card1descriptiongris2)) ? ' is-invalid': (form.vars.data.card1descriptiongris2 ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card1descriptiongris2)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Image</label>
+                {{ form_widget(form.card1ImageFile,{attr: {class: ' dropify', 'data-height': '200', 'data-default-file': ((form.vars.value) ?  vich_uploader_asset(form.vars.value, 'card1ImageFile') : '')}}) }}
+                {{ form_errors(form.card1ImageFile) }}
+            </div>
+        </div>
+    </div>
+</fieldset>
+<br>
+<fieldset>
+    <legend>Bloc 2</legend>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                {{ form_widget(form.card2Nb,{attr: {class: 'form-control' ~ ((form_errors(form.card2Nb)) ? ' is-invalid' : (form.vars.data.card2Nb ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card2Nb)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre blanc</label>
+                {{ form_widget(form.card2Label,{attr: {class: 'form-control' ~ ((form_errors(form.card2Label)) ? ' is-invalid': (form.vars.data.card2Label ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card2Label)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre rouge</label>
+                {{ form_widget(form.card2LabelRouge,{attr: {class: 'form-control' ~ ((form_errors(form.card2LabelRouge)) ? ' is-invalid': (form.vars.data.card2LabelRouge ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card2LabelRouge)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                {{ form_widget(form.card2Description,{attr: {class: 'form-control' ~ ((form_errors(form.card2Description)) ? ' is-invalid': (form.vars.data.card2Description ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card2Description)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+<br>
+<fieldset>
+    <legend>Bloc 3</legend>
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">mini titre</label>
+                {{ form_widget(form.card3TitreMini,{attr: {class: 'form-control' ~ ((form_errors(form.card3TitreMini)) ? ' is-invalid' : (form.vars.data.card3TitreMini ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card3TitreMini)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre</label>
+                {{ form_widget(form.card3Titre,{attr: {class: 'form-control' ~ ((form_errors(form.card3Titre)) ? ' is-invalid': (form.vars.data.card3Titre ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card3Titre)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                {{ form_widget(form.card3Description,{attr: {class: 'content ' ~ ((form_errors(form.card3Description)) ? ' is-invalid': (form.vars.data.card3Description ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card3Description)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Image de fond</label>
+                {{ form_widget(form.card3ImageFondFile,{attr: {class: ' dropify', 'data-height': '200', 'data-default-file': ((form.vars.value) ?  vich_uploader_asset(form.vars.value, 'card3ImageFondFile') : '')}}) }}
+                {{ form_errors(form.card3ImageFondFile) }}
+            </div>
+        </div>
+    </div>
+</fieldset>
+<br>
+<fieldset>
+    <legend>Bloc 4</legend>
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre Or</label>
+                {{ form_widget(form.card4TitreOr,{attr: {class: 'form-control' ~ ((form_errors(form.card4TitreOr)) ? ' is-invalid' : (form.vars.data.card4TitreOr ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card4TitreOr)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre Blanc</label>
+                {{ form_widget(form.card4TitreBlanc,{attr: {class: 'form-control' ~ ((form_errors(form.card4TitreBlanc)) ? ' is-invalid': (form.vars.data.card4TitreBlanc ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card4TitreBlanc)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Texte gris</label>
+                {{ form_widget(form.card4LabelGris,{attr: {class: 'form-control' ~ ((form_errors(form.card4LabelGris)) ? ' is-invalid': (form.vars.data.card4LabelGris ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card4LabelGris)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Image</label>
+                {{ form_widget(form.card4ImageFile,{attr: {class: ' dropify', 'data-height': '200', 'data-default-file': ((form.vars.value) ?  vich_uploader_asset(form.vars.value, 'card4ImageFile') : '')}}) }}
+                {{ form_errors(form.card4ImageFile) }}
+            </div>
+        </div>
+    </div>
+</fieldset>
+<br>
+<fieldset>
+    <legend>Bloc 5</legend>
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Stat</label>
+                {{ form_widget(form.card5Nb,{attr: {class: 'form-control' ~ ((form_errors(form.card5Nb)) ? ' is-invalid' : (form.vars.data.card5Nb ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card5Nb)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Texte</label>
+                {{ form_widget(form.card5label,{attr: {class: 'form-control' ~ ((form_errors(form.card5label)) ? ' is-invalid': (form.vars.data.card5label ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.card5label)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>

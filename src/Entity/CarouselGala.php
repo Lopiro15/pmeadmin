@@ -2,13 +2,24 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\CarouselGalaRepository;
 use App\Traits\Horodatage;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:carouselGala']
+)]
 #[ORM\Entity(repositoryClass: CarouselGalaRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[Vich\Uploadable]
@@ -23,21 +34,27 @@ class CarouselGala
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read:carouselGala'])]
     private ?string $badge = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read:carouselGala'])]
     private ?string $titre = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read:carouselGala'])]
     private ?string $description = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read:carouselGala'])]
     private ?string $impact = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups(['read:carouselGala'])]
     private ?int $annee = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read:carouselGala'])]
     private ?string $labelAnnee = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -52,6 +69,7 @@ class CarouselGala
     private ?File $file = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read:carouselGala'])]
     private ?string $filePath = null;
 
     public function getId(): ?int

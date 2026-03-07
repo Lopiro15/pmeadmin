@@ -2,10 +2,21 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\PaysInviteGalaRepository;
 use App\Traits\Horodatage;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:paysInvite']
+)]
 #[ORM\Entity(repositoryClass: PaysInviteGalaRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 class PaysInviteGala
@@ -19,12 +30,15 @@ class PaysInviteGala
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read:paysInvite'])]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read:paysInvite'])]
     private ?string $minNom = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read:paysInvite'])]
     private ?string $labelEdition = null;
 
     #[ORM\ManyToOne(inversedBy: 'paysInviteGalas')]

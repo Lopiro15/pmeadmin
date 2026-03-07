@@ -1,0 +1,87 @@
+<fieldset>
+    <legend>Information Section Rétrospective</legend>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">An debut</label>
+                {{ form_widget(form.debut,{attr: {class: 'form-control' ~ ((form_errors(form.debut)) ? ' is-invalid': (form.vars.data.debut ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.debut)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">An fin</label>
+                {{ form_widget(form.fin,{attr: {class: 'form-control' ~ ((form_errors(form.fin)) ? ' is-invalid': (form.vars.data.fin ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.fin)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre noir</label>
+                {{ form_widget(form.titreBlack,{attr: {class: 'form-control' ~ ((form_errors(form.titreBlack)) ? ' is-invalid': (form.vars.data.titreBlack ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.titreBlack)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre gris</label>
+                {{ form_widget(form.titreGris,{attr: {class: 'form-control' ~ ((form_errors(form.titreGris)) ? ' is-invalid': (form.vars.data.titreGris ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.titreGris)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Nb Pme inscrites</label>
+                {{ form_widget(form.nbPmeIncrite,{attr: {class: 'form-control' ~ ((form_errors(form.nbPmeIncrite)) ? ' is-invalid': (form.vars.data.nbPmeIncrite ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.nbPmeIncrite)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Participants cummulés</label>
+                {{ form_widget(form.nbParticipant,{attr: {class: 'form-control' ~ ((form_errors(form.nbParticipant)) ? ' is-invalid': (form.vars.data.nbParticipant ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.nbParticipant)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Proportion de chef d'entreprise (%)</label>
+                {{ form_widget(form.proportionChef,{attr: {class: 'form-control' ~ ((form_errors(form.proportionChef)) ? ' is-invalid': (form.vars.data.proportionChef ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.proportionChef)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Proportion du public (%)</label>
+                {{ form_widget(form.proportionPublic,{attr: {class: 'form-control' ~ ((form_errors(form.proportionPublic)) ? ' is-invalid': (form.vars.data.proportionPublic ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.proportionPublic)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Proportion cadre (%)</label>
+                {{ form_widget(form.proportionCadre,{attr: {class: 'form-control' ~ ((form_errors(form.proportionCadre)) ? ' is-invalid': (form.vars.data.proportionCadre ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.proportionCadre)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+

@@ -10,38 +10,41 @@
         <div class="col-10">
             <div class="card custom-card">
                 <div class="card-header  p-3 tx-semibold tx-white bg-primary">
-                    Section épicentre
+                    Section rétrospective
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered border-bottom" id="basic-datatable">
                             <thead>
                             <tr>
-                                <th class="text-center">Titre Noir</th>
-                                <th class="text-center">Titre gris</th>
-                                <th class="text-center">Adresse longue</th>
-                                <th class="text-center">lien Carte</th>
-                                <th class="text-center">description Infoline</th>
-                                <th class="text-center">telephone</th>
-                                <th class="text-center">email</th>
+                                <th class="text-center">Début</th>
+                                <th class="text-center">Fin</th>
+                                <th class="text-center">Titre noir</th>
+                                <th class="text-center">Titre grid</th>
+                                <th class="text-center">Nb inscrits</th>
+                                <th class="text-center">(%) chef</th>
+                                <th class="text-center">(%) public</th>
+                                <th class="text-center">(%) cadre</th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             {% for index, a in articles %}
                                 <tr>
+                                    <th>{{ a.debut }}</th>
+                                    <th>{{ a.fin }}</th>
                                     <th>{{ a.titreBlack }}</th>
                                     <th>{{ a.titreGris }}</th>
-                                    <th>{{ a.adresseLongue }}</th>
-                                    <th>{{ a.lienCarte }}</th>
-                                    <th>{{ a.descriptionInfoline }}</th>
-                                    <th>{{ a.telephone }}</th>
-                                    <th>{{ a.email }}</th>
+                                    <th>{{ a.nbPmeIncrite }}</th>
+                                    <th>{{ a.nbParticipant }}</th>
+                                    <th>{{ a.proportionChef }}</th>
+                                    <th>{{ a.proportionPublic }}</th>
+                                    <th>{{ a.proportionCadre }}</th>
                                     <th class="text-center d-flex justify-content-center">
-                                        <a href="{{ path('app_accueil_epicentre_edit', {'id' : a.id}) }}" class="me-1 ms-1 btn btn-sm btn-primary">
+                                        <a href="{{ path('app_gala_retrospective_edit', {'id' : a.id}) }}" class="me-1 ms-1 btn btn-sm btn-primary">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        {{ include('accueil/epicentre/_delete_form.html.twig' , {'article': a}) }}
+                                        {{ include('gala/retrospective/_delete_form.html.twig' , {'article': a}) }}
                                     </th>
                                 </tr>
                             {% endfor %}
@@ -52,7 +55,7 @@
                 </div>
                 {% if articles | length == 0 %}
                     <div class="card-footer">
-                        <a href="{{ path('app_accueil_epicentre_new') }}" class="btn btn-primary float-end">Nouveau</a>
+                        <a href="{{ path('app_gala_retrospective_new') }}" class="btn btn-primary float-end">Nouveau</a>
                     </div>
                 {% endif %}
             </div>

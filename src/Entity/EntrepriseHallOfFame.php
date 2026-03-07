@@ -2,13 +2,24 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\EntrepriseHallOfFameRepository;
 use App\Traits\Horodatage;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:entreprisegala']
+)]
 #[ORM\Entity(repositoryClass: EntrepriseHallOfFameRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[Vich\Uploadable]
@@ -22,15 +33,19 @@ class EntrepriseHallOfFame
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:entreprisegala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $raisonSocial = null;
 
+    #[Groups(['read:entreprisegala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $facebook = null;
 
+    #[Groups(['read:entreprisegala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $linkedin = null;
 
+    #[Groups(['read:entreprisegala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $siteWeb = null;
 
@@ -40,6 +55,7 @@ class EntrepriseHallOfFame
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imageName = null;
 
+    #[Groups(['read:entreprisegala'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imagePath = null;
 

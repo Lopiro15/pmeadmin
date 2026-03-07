@@ -1,0 +1,67 @@
+<fieldset>
+    <legend>Information bannière</legend>
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">badge</label>
+                {{ form_widget(form.badge,{attr: {class: 'form-control' ~ ((form_errors(form.badge)) ? ' is-invalid' : (form.vars.data.badge ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.badge)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre</label>
+                {{ form_widget(form.titre,{attr: {class: 'form-control' ~ ((form_errors(form.titre)) ? ' is-invalid': (form.vars.data.titre ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.titre)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                {{ form_widget(form.description,{attr: {class: 'content ' ~ ((form_errors(form.description)) ? ' is-invalid': (form.vars.data.description ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.description)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Impact</label>
+                {{ form_widget(form.impact,{attr: {class: 'form-control' ~ ((form_errors(form.impact)) ? ' is-invalid': (form.vars.data.impact ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.impact)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Année</label>
+                {{ form_widget(form.annee,{attr: {class: 'form-control' ~ ((form_errors(form.annee)) ? ' is-invalid': (form.vars.data.annee ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.annee)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">label edition</label>
+                {{ form_widget(form.labelAnnee,{attr: {class: 'form-control' ~ ((form_errors(form.labelAnnee)) ? ' is-invalid': (form.vars.data.labelAnnee ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.labelAnnee)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Image</label>
+                {{ form_widget(form.file,{attr: {class: ' dropify', 'data-height': '200', 'data-default-file': ((form.vars.value) ?  vich_uploader_asset(form.vars.value, 'file') : '')}}) }}
+                {{ form_errors(form.file) }}
+            </div>
+        </div>
+    </div>
+</fieldset>

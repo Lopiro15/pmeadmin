@@ -1,0 +1,33 @@
+<fieldset>
+    <legend>Information Pays Invité</legend>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Nom complet</label>
+                {{ form_widget(form.nom,{attr: {class: 'form-control' ~ ((form_errors(form.nom)) ? ' is-invalid': (form.vars.data.nom ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.nom)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Nom minimal</label>
+                {{ form_widget(form.minNom,{attr: {class: 'form-control' ~ ((form_errors(form.minNom)) ? ' is-invalid': (form.vars.data.minNom ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.minNom)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Texte édition</label>
+                {{ form_widget(form.labelEdition,{attr: {class: 'form-control' ~ ((form_errors(form.labelEdition)) ? ' is-invalid': (form.vars.data.labelEdition ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.labelEdition)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+

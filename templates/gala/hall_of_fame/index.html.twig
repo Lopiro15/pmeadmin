@@ -10,17 +10,16 @@
         <div class="col-10">
             <div class="card custom-card">
                 <div class="card-header  p-3 tx-semibold tx-white bg-primary">
-                    Liste des cartes section programme
+                    Section Hall of Fame
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered border-bottom" id="basic-datatable">
                             <thead>
                             <tr>
-                                <th class="text-center">N°</th>
-                                <th class="text-center">Icon svg</th>
-                                <th class="text-center">Titre</th>
-                                <th class="text-center">Sous Titre</th>
+                                <th class="text-center">Badge</th>
+                                <th class="text-center">Titre noir</th>
+                                <th class="text-center">Titre rouge</th>
                                 <th class="text-center">Description</th>
                                 <th class="text-center">Action</th>
                             </tr>
@@ -28,15 +27,16 @@
                             <tbody>
                             {% for index, a in articles %}
                                 <tr>
-                                    <th class="text-center">{{ index + 1 }}</th>
-                                    <th>{{ a.svg }}</th>
-                                    <th>{{ a.titre }}</th>
-                                    <th>{{ a.sousTitre }}</th>
+                                    <th>{{ a.badge }}</th>
+                                    <th>{{ a.titreBlack }}</th>
+                                    <th>{{ a.titreRouge }}</th>
                                     <th>{{ a.description }}</th>
-                                    <th class="text-center">
-                                        <a href="{{ path('app_accueil_card_programme_show', {'id' : a.id}) }}">
-                                            <i class="fa fa-eye"></i>
+                                    <th class="text-center d-flex justify-content-center">
+                                        <a href="{{ path('app_gala_hall_of_fame_edit', {'id' : a.id}) }}"
+                                           class="me-1 ms-1 btn btn-sm btn-primary">
+                                            <i class="fa fa-edit"></i>
                                         </a>
+                                        {{ include('gala/hall_of_fame/_delete_form.html.twig' , {'article': a}) }}
                                     </th>
                                 </tr>
                             {% endfor %}
@@ -45,9 +45,11 @@
                     </div>
 
                 </div>
-                <div class="card-footer">
-                    <a href="{{ path('app_accueil_card_programme_new') }}" class="btn btn-primary float-end">Nouveau</a>
-                </div>
+                {% if articles | length == 0 %}
+                    <div class="card-footer">
+                        <a href="{{ path('app_gala_hall_of_fame_new') }}" class="btn btn-primary float-end">Nouveau</a>
+                    </div>
+                {% endif %}
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->

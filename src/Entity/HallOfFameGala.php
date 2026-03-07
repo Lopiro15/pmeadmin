@@ -2,12 +2,23 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\HallOfFameGalaRepository;
 use App\Traits\Horodatage;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:halloffame']
+)]
 #[ORM\Entity(repositoryClass: HallOfFameGalaRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 class HallOfFameGala
@@ -20,15 +31,19 @@ class HallOfFameGala
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:halloffame'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $badge = null;
 
+    #[Groups(['read:halloffame'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreBlack = null;
 
+    #[Groups(['read:halloffame'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreRouge = null;
 
+    #[Groups(['read:halloffame'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
 

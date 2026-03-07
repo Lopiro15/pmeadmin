@@ -27,10 +27,12 @@ class ReservationProcessor implements \ApiPlatform\State\ProcessorInterface
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = [])
     {
 
+        /** @var Reservation $data */
+        $data->setTotal($data->getQuantity() * $data->getTypeTicket()->getTarif());
         $this->manager->persist($data);
         $this->manager->flush();
         try {
-            /** @var Reservation $data */
+
             $this->service->sendTicketEmail($data);
         } catch (TransportExceptionInterface $e) {
 

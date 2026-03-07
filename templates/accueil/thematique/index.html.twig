@@ -1,52 +1,3 @@
-{#{% extends 'base.html.twig' %}#}
-
-{#{% block title %}Article index{% endblock %}#}
-
-{#{% block body %}#}
-{#    <h1>Article index</h1>#}
-
-{#    <table class="table">#}
-{#        <thead>#}
-{#            <tr>#}
-{#                <th>Id</th>#}
-{#                <th>Title</th>#}
-{#                <th>Subtitle</th>#}
-{#                <th>Date</th>#}
-{#                <th>Description</th>#}
-{#                <th>ImageName</th>#}
-{#                <th>ImageSize</th>#}
-{#                <th>actions</th>#}
-{#            </tr>#}
-{#        </thead>#}
-{#        <tbody>#}
-{#        {% for article in articles %}#}
-{#            <tr>#}
-{#                <td>{{ article.id }}</td>#}
-{#                <td>{{ article.title }}</td>#}
-{#                <td>{{ article.subtitle }}</td>#}
-{#                <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>#}
-{#                <td>{{ article.description }}</td>#}
-{#                <td>{{ article.imageName }}</td>#}
-{#                <td>{{ article.imageSize }}</td>#}
-{#                <td>#}
-{#                    <a href="{{ path('app_admin_article_show', {'id': article.id}) }}">show</a>#}
-{#                    <a href="{{ path('app_admin_article_edit', {'id': article.id}) }}">edit</a>#}
-{#                </td>#}
-{#            </tr>#}
-{#        {% else %}#}
-{#            <tr>#}
-{#                <td colspan="8">no records found</td>#}
-{#            </tr>#}
-{#        {% endfor %}#}
-{#        </tbody>#}
-{#    </table>#}
-
-{#    <a href="{{ path('app_admin_article_new') }}">Create new</a>#}
-{#{% endblock %}#}
-
-
-
-
 
 {% extends 'base.html.twig' %}
 
@@ -64,7 +15,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
+                        <table class="table table-bordered border-bottom" id="basic-datatable">
                             <thead>
                             <tr>
                                 <th class="text-center">N°</th>

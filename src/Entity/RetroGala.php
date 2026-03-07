@@ -2,13 +2,24 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\RetroGalaRepository;
 use App\Traits\Horodatage;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:retrogala']
+)]
 #[ORM\Entity(repositoryClass: RetroGalaRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 class RetroGala
@@ -22,30 +33,39 @@ class RetroGala
     private ?int $id = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups(['read:retrogala'])]
     private ?int $debut = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups(['read:retrogala'])]
     private ?int $fin = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read:retrogala'])]
     private ?string $titreBlack = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['read:retrogala'])]
     private ?string $titreGris = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups(['read:retrogala'])]
     private ?int $nbPmeIncrite = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups(['read:retrogala'])]
     private ?int $nbParticipant = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 3, scale: 1, nullable: true)]
+    #[Groups(['read:retrogala'])]
     private ?string $proportionChef = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 3, scale: 1, nullable: true)]
+    #[Groups(['read:retrogala'])]
     private ?string $proportionPublic = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 3, scale: 1, nullable: true)]
+    #[Groups(['read:retrogala'])]
     private ?string $proportionCadre = null;
 
     /**

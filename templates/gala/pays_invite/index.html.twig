@@ -10,33 +10,30 @@
         <div class="col-10">
             <div class="card custom-card">
                 <div class="card-header  p-3 tx-semibold tx-white bg-primary">
-                    Liste des cartes section programme
+                    Pays Invités
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered border-bottom" id="basic-datatable">
+                        <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
                             <thead>
                             <tr>
-                                <th class="text-center">N°</th>
-                                <th class="text-center">Icon svg</th>
-                                <th class="text-center">Titre</th>
-                                <th class="text-center">Sous Titre</th>
-                                <th class="text-center">Description</th>
+                                <th class="text-center">Nom</th>
+                                <th class="text-center">Nom minimal</th>
+                                <th class="text-center">Texte édition</th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             {% for index, a in articles %}
                                 <tr>
-                                    <th class="text-center">{{ index + 1 }}</th>
-                                    <th>{{ a.svg }}</th>
-                                    <th>{{ a.titre }}</th>
-                                    <th>{{ a.sousTitre }}</th>
-                                    <th>{{ a.description }}</th>
-                                    <th class="text-center">
-                                        <a href="{{ path('app_accueil_card_programme_show', {'id' : a.id}) }}">
-                                            <i class="fa fa-eye"></i>
+                                    <th>{{ a.nom }}</th>
+                                    <th>{{ a.minNom }}</th>
+                                    <th>{{ a.labelEdition }}</th>
+                                    <th class="text-center d-flex justify-content-center">
+                                        <a href="{{ path('app_gala_pays_invite_edit', {'id' : a.id}) }}" class="me-1 ms-1 btn btn-sm btn-primary">
+                                            <i class="fa fa-edit"></i>
                                         </a>
+                                        {{ include('gala/pays_invite/_delete_form.html.twig' , {'article': a}) }}
                                     </th>
                                 </tr>
                             {% endfor %}
@@ -46,7 +43,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <a href="{{ path('app_accueil_card_programme_new') }}" class="btn btn-primary float-end">Nouveau</a>
+                    <a href="{{ path('app_gala_pays_invite_new') }}" class="btn btn-primary float-end">Nouveau</a>
                 </div>
             </div>
         </div> <!-- end col -->
