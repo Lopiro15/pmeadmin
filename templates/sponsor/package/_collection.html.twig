@@ -1,0 +1,52 @@
+{% block _package_dossier_avantages_entry_row %}
+    {{ form_widget(form) }}
+{% endblock %}
+
+{% block _package_dossier_avantages_widget %}
+    <div class="row">
+        <div class="col-12">
+            <button type="button" id="AddPriceProduct"
+                    data-list-selector="#package_dossier_avantages"
+                    class="btn btn-outline-primary float-end mb-3">
+                Nouveau
+            </button>
+        </div>
+        <div class="col-12">
+            {{ form_widget(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block _package_dossier_avantages_entry_widget %}
+
+    <tr id="block_{{ id }}">
+        <td>
+            {{ form_widget(form.label,{attr: {class: 'form-control' }}) }}
+            <div class="invalid-feedback">
+                {{form_errors(form.label)}}
+            </div>
+        </td>
+        <td class="text-center">
+            <button type="button"
+                    class="btn btn-danger btn-sm rounded delete-product-price"
+                    data-action="delete"
+                    data-target="#block_{{ id }}">
+                <i class="fa fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+
+{#    <div class="col-sm-12 col-md-4 mg-t-10 mg-sm-t-0 mb-3" id="block_{{ id }}">#}
+{#        {{ form_widget(form.imageFile,{attr: {class: ' dropify', 'data-height': '200', 'data-default-file': ((form.vars.value) ?  vich_uploader_asset(form.vars.value, 'imageFile') : '')}}) }}#}
+{#        {{ form_errors(form.imageFile) }}#}
+{#        <div class="d-flex justify-content-between">#}
+{#            {{ form_widget(form.legende,{attr: {class: 'form-control '}}) }}#}
+{#            <button type="button"#}
+{#                    class="btn btn-danger ms-2 delete-image-banniere"#}
+{#                    data-action="delete"#}
+{#                    data-target="#block_{{ id }}">#}
+{#                <i class="fa fa-trash"></i>#}
+{#            </button>#}
+{#        </div>#}
+{#    </div>#}
+{% endblock %}

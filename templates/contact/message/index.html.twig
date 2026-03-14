@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{parent()}}
+
+{% endblock %}
+
+{% block body %}
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+        <div>
+            <h2 class="main-content-title tx-24 mg-b-5">Liste des Messages</h2>
+        </div>
+    </div>
+    <!-- END PAGE HEADER -->
+
+    <div id="appMessage"></div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{parent()}}
+    <!-- INTERNAL CHECK-ALL-MAIL JS -->
+    {{ encore_entry_script_tags('js/check-all-mail') }}
+{% endblock %}

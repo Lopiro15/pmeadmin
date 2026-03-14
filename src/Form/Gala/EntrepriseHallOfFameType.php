@@ -20,6 +20,7 @@ class EntrepriseHallOfFameType extends AbstractType
             ->add('facebook')
             ->add('linkedin')
             ->add('siteWeb')
+            ->add('badge')
             ->add('imageFile', VichImageType::class, [
                 'required' => false,
                 'allow_delete' => true,

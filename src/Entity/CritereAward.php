@@ -2,11 +2,22 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\CritereAwardRepository;
 use App\Traits\Horodatage;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:critereAward']
+)]
 #[ORM\Entity(repositoryClass: CritereAwardRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 class CritereAward
@@ -19,12 +30,15 @@ class CritereAward
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:critereAward'])]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $svg = null;
 
+    #[Groups(['read:critereAward'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $label = null;
 
+    #[Groups(['read:critereAward'])]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 

@@ -21,6 +21,8 @@ import './styles/app.css';
 require('./js/parametrage/add-collection-repas-detail');
 require('./js/parametrage/add-collection-page-imageBanniere');
 require('./js/parametrage/add-collection-section-detailSection');
+require('./js/parametrage/add-collection-product-price');
+require('./js/parametrage/add-collection-avantage-ticket');
 
 $('select.select2').select2({width: '100%'});
 

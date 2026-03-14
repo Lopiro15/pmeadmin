@@ -1,0 +1,39 @@
+{% block _type_ticket_avantages_entry_row %}
+    {{ form_widget(form) }}
+{% endblock %}
+
+{% block _type_ticket_avantages_widget %}
+    <div class="row">
+        <div class="col-12">
+            <button type="button" id="AddAvantageTypeTicket"
+                    data-list-selector="#type_ticket_avantages"
+                    class="btn btn-outline-primary float-end mb-3">
+                Nouveau
+            </button>
+        </div>
+        <div class="col-12">
+            {{ form_widget(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block _type_ticket_avantages_entry_widget %}
+
+    <tr id="block_{{ id }}">
+        <td>
+            {{ form_widget(form.label,{attr: {class: 'form-control' }}) }}
+            <div class="invalid-feedback">
+                {{form_errors(form.label)}}
+            </div>
+        </td>
+        <td class="text-center">
+            <button type="button"
+                    class="btn btn-danger btn-sm rounded delete-avantage-ticket"
+                    data-action="delete"
+                    data-target="#block_{{ id }}">
+                <i class="fa fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+
+{% endblock %}

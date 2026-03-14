@@ -2,12 +2,23 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\DetailGalerieRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:detailGalerie']
+)]
 #[ORM\Entity(repositoryClass: DetailGalerieRepository::class)]
 class DetailGalerie
 {
@@ -16,12 +27,15 @@ class DetailGalerie
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:detailGalerie'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $edition = null;
 
+    #[Groups(['read:detailGalerie'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titre = null;
 
+    #[Groups(['read:detailGalerie'])]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
@@ -29,6 +43,7 @@ class DetailGalerie
      * @var Collection<int, ClicheGalerie>
      */
     #[ORM\OneToMany(targetEntity: ClicheGalerie::class, mappedBy: 'detailGalerie', cascade: ["persist", "remove"], orphanRemoval: true)]
+    #[Groups(['read:detailGalerie'])]
     private Collection $cliches;
 
     public function __construct()

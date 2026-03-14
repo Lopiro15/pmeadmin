@@ -1,0 +1,32 @@
+<fieldset>
+    <legend>Information Stat</legend>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Icone svg</label>
+                {{ form_widget(form.svg,{attr: {class: 'form-control' ~ ((form_errors(form.svg)) ? ' is-invalid' : (form.vars.data.svg ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.svg)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">nom</label>
+                {{ form_widget(form.label,{attr: {class: 'form-control' ~ ((form_errors(form.label)) ? ' is-invalid': (form.vars.data.label ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.label)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                {{ form_widget(form.description,{attr: {class: 'content ' ~ ((form_errors(form.description)) ? ' is-invalid': (form.vars.data.description ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.description)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>

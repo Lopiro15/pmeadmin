@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: PackExposantRepository::class)]
 #[ApiResource(
@@ -18,6 +19,7 @@ use Doctrine\ORM\Mapping as ORM;
         new Get(),
         new GetCollection()
     ],
+    normalizationContext: ['groups' => 'read:packExpo']
 )]
 #[ORM\HasLifecycleCallbacks]
 class PackExposant
@@ -30,15 +32,19 @@ class PackExposant
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[Groups(['read:packExpo'])]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $label = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[Groups(['read:packExpo'])]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $svg = null;
 
+    #[Groups(['read:packExpo'])]
     #[ORM\Column(type: Types::DECIMAL, precision: 12, scale: 3)]
     private ?string $montant = null;
 
+    #[Groups(['read:packExpo'])]
     #[ORM\Column]
     private array $avantage = [];
 
@@ -63,7 +69,7 @@ class PackExposant
         return $this->label;
     }
 
-    public function setLabel(string $label): static
+    public function setLabel(?string $label): static
     {
         $this->label = $label;
 
@@ -75,7 +81,7 @@ class PackExposant
         return $this->svg;
     }
 
-    public function setSvg(string $svg): static
+    public function setSvg(?string $svg): static
     {
         $this->svg = $svg;
 
@@ -87,7 +93,7 @@ class PackExposant
         return $this->montant;
     }
 
-    public function setMontant(string $montant): static
+    public function setMontant(?string $montant): static
     {
         $this->montant = $montant;
 

@@ -2,14 +2,25 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\DetailOpportuniteExposantRepository;
 use App\Traits\Horodatage;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:opportuniteDetail']
+)]
 #[ORM\Entity(repositoryClass: DetailOpportuniteExposantRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[Vich\Uploadable]
@@ -23,18 +34,23 @@ class DetailOpportuniteExposant
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:opportuniteDetail'])]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $svg = null;
 
+    #[Groups(['read:opportuniteDetail'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $badge = null;
 
+    #[Groups(['read:opportuniteDetail'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titre = null;
 
+    #[Groups(['read:opportuniteDetail'])]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
+    #[Groups(['read:opportuniteDetail'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $linkDetail = null;
 
@@ -44,6 +60,7 @@ class DetailOpportuniteExposant
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imageName = null;
 
+    #[Groups(['read:opportuniteDetail'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imagePath = null;
 

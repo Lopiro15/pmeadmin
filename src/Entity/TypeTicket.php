@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: TypeTicketRepository::class)]
 #[ApiResource(
@@ -18,6 +19,7 @@ use Doctrine\ORM\Mapping as ORM;
         new Get(),
         new GetCollection()
     ],
+    normalizationContext: ['groups' => 'read:typeTicket']
 )]
 #[ORM\HasLifecycleCallbacks]
 class TypeTicket
@@ -30,15 +32,19 @@ class TypeTicket
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:typeTicket'])]
     #[ORM\Column(length: 255)]
     private ?string $label = null;
 
+    #[Groups(['read:typeTicket'])]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $svg = null;
 
+    #[Groups(['read:typeTicket'])]
     #[ORM\Column(type: Types::DECIMAL, precision: 12, scale: 3)]
     private ?string $tarif = null;
 
+    #[Groups(['read:typeTicket'])]
     #[ORM\Column]
     private array $avantage = [];
 

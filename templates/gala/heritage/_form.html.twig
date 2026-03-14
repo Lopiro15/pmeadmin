@@ -57,7 +57,7 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Description blanc</label>
-                {{ form_widget(form.card1descriptionblanc,{attr: {class: 'content ' ~ ((form_errors(form.card1descriptionblanc)) ? ' is-invalid': (form.vars.data.card1descriptionblanc ? ' is-valid' : '' ))}}) }}
+                {{ form_widget(form.card1descriptionblanc,{attr: {class: 'form-control ' ~ ((form_errors(form.card1descriptionblanc)) ? ' is-invalid': (form.vars.data.card1descriptionblanc ? ' is-valid' : '' ))}}) }}
                 <div class="invalid-feedback">
                     {{form_errors(form.card1descriptionblanc)}}
                 </div>
@@ -66,7 +66,7 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label class="form-label">Description gris 2</label>
-                {{ form_widget(form.card1descriptiongris2,{attr: {class: 'content ' ~ ((form_errors(form.card1descriptiongris2)) ? ' is-invalid': (form.vars.data.card1descriptiongris2 ? ' is-valid' : '' ))}}) }}
+                {{ form_widget(form.card1descriptiongris2,{attr: {class: 'form-control ' ~ ((form_errors(form.card1descriptiongris2)) ? ' is-invalid': (form.vars.data.card1descriptiongris2 ? ' is-valid' : '' ))}}) }}
                 <div class="invalid-feedback">
                     {{form_errors(form.card1descriptiongris2)}}
                 </div>
@@ -149,7 +149,7 @@
         <div class="col-md-12">
             <div class="mb-3">
                 <label class="form-label">Description</label>
-                {{ form_widget(form.card3Description,{attr: {class: 'content ' ~ ((form_errors(form.card3Description)) ? ' is-invalid': (form.vars.data.card3Description ? ' is-valid' : '' ))}}) }}
+                {{ form_widget(form.card3Description,{attr: {class: 'form-control ' ~ ((form_errors(form.card3Description)) ? ' is-invalid': (form.vars.data.card3Description ? ' is-valid' : '' ))}}) }}
                 <div class="invalid-feedback">
                     {{form_errors(form.card3Description)}}
                 </div>

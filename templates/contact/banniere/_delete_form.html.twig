@@ -1,0 +1,26 @@
+<form method="post" action="{{ path('app_contact_banniere_delete', {'id': article.id}) }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ article.id) }}">
+
+
+<button type="button" class="btn btn-danger waves-effect waves-light float-end"  data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"> <i class="fa fa-trash"></i> Supprimer</button>
+
+<div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <h5 class="modal-title"> <i class="fa fa-exclamation-triangle"></i> Attention</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Voulez vraiment supprimer cet élement de manière définitives ?</p>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" data-bs-dismiss="modal" class="btn btn-secondary float-end">Retour</button>
+                <input type="submit" value="Supprimer" name="delete" class="btn btn-danger float-end"/>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</form>

@@ -2,14 +2,25 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\BanniereAwardRepository;
 use App\Traits\Horodatage;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:banniereAward']
+)]
 #[ORM\Entity(repositoryClass: BanniereAwardRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[Vich\Uploadable]
@@ -23,21 +34,26 @@ class BanniereAward
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:banniereAward'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $badge = null;
 
+    #[Groups(['read:banniereAward'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreBlanc = null;
 
+    #[Groups(['read:banniereAward'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreRouge = null;
 
+    #[Groups(['read:banniereAward'])]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imageName = null;
 
+    #[Groups(['read:banniereAward'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imagePath = null;
 

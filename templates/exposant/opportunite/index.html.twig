@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+    <div class="row row-sm justify-content-center mt-5">
+        <div class="col-10">
+            <div class="card custom-card">
+                <div class="card-header  p-3 tx-semibold tx-white bg-primary">
+                    Section opportunité
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered border-bottom" id="basic-datatable">
+                            <thead>
+                            <tr>
+                                <th class="text-center">Titre Noir</th>
+                                <th class="text-center">Titre rouge</th>
+                                <th class="text-center">Description</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for index, a in articles %}
+                                <tr>
+                                    <th>{{ a.titreBlack }}</th>
+                                    <th>{{ a.titreRouge }}</th>
+                                    <th>{{ a.description }}</th>
+                                    <th class="text-center d-flex justify-content-center">
+                                        <a href="{{ path('app_exposant_opportunite_edit', {'id' : a.id}) }}" class="me-1 ms-1 btn btn-sm btn-primary">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        {{ include('exposant/opportunite/_delete_form.html.twig' , {'article': a}) }}
+                                    </th>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                {% if articles | length == 0 %}
+                    <div class="card-footer">
+                        <a href="{{ path('app_exposant_opportunite_new') }}" class="btn btn-primary float-end">Nouveau</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+{% endblock %}
+

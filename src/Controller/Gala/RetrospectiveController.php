@@ -36,7 +36,7 @@ class RetrospectiveController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash("success", "Section rétrospective créée avec succès");
-            return $this->redirectToRoute('app_gala_retrospective_index', ['id' => $article->getId()], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_gala_retrospective_index');
         }
 
         return $this->render('gala/retrospective/new.html.twig', [

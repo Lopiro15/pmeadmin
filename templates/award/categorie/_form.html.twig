@@ -1,0 +1,49 @@
+<fieldset>
+    <legend>Information bannière</legend>
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Code</label>
+                {{ form_widget(form.code,{attr: {class: 'form-control' ~ ((form_errors(form.code)) ? ' is-invalid' : (form.vars.data.code ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.code)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre</label>
+                {{ form_widget(form.label,{attr: {class: 'form-control' ~ ((form_errors(form.label)) ? ' is-invalid': (form.vars.data.label ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.label)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Mini titre</label>
+                {{ form_widget(form.miniTitre,{attr: {class: 'form-control' ~ ((form_errors(form.miniTitre)) ? ' is-invalid': (form.vars.data.miniTitre ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.miniTitre)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                {{ form_widget(form.description,{attr: {class: 'content ' ~ ((form_errors(form.description)) ? ' is-invalid': (form.vars.data.description ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.description)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Image</label>
+                {{ form_widget(form.imageFile,{attr: {class: ' dropify', 'data-height': '200', 'data-default-file': ((form.vars.value) ?  vich_uploader_asset(form.vars.value, 'imageFile') : '')}}) }}
+                {{ form_errors(form.imageFile) }}
+            </div>
+        </div>
+    </div>
+</fieldset>

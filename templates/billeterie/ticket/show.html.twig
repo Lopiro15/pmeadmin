@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row row-sm justify-content-center mt-5">
+        <div class="col-xl-10">
+            <div class="card custom-card overflow-hidden">
+                <div class="card-header custom-card-header">
+                    <h1>Detail Pack</h1>
+                </div>
+                <div class="card-body">
+                    <fieldset>
+                        <legend>Informations du pack</legend>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th class="text-center">Icone SVG</th>
+                                <th class="text-center">Libelle</th>
+                                <th class="text-center">Tarif</th>
+                            </tr>
+                            <tr>
+                                <td class="d-flex justify-content-center">{{ article.svg | raw }}</td>
+                                <td>{{ article.label }}</td>
+                                <td class="text-end">{{ article.tarif | number_format(0, ',', ' ') }}</td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Avantages</legend>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th class="text-center">N°</th>
+                                <th class="text-center">Description</th>
+                            </tr>
+                            {% for index, a in article.avantage %}
+                                <tr>
+                                    <td>{{ index + 1 }}</td>
+                                    <td>{{ a }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </fieldset>
+                </div>
+                <div class="card-footer">
+                    {{ include('billeterie/ticket/_delete_form.html.twig') }}
+                    <a href="{{ path('app_billeterie_ticket_edit', {'id': article.id}) }}"
+                       class="btn btn-primary float-end me-2"> <i class="fas fa-edit"></i> Modifier</a>
+                    <a href="{{ path('app_billeterie_ticket_index') }}" class="btn btn-primary float-end me-2"> <i
+                                class="fas fa-arrow-circle-left"></i> Retour</a>
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <!--end col-->
+    </div>
+{% endblock %}
+
+
+
+

@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: PackageDossierRepository::class)]
 #[ApiResource(
@@ -18,6 +19,7 @@ use Doctrine\ORM\Mapping as ORM;
         new Get(),
         new GetCollection()
     ],
+    normalizationContext: ['groups' => 'read:packageDossier']
 )]
 #[ORM\HasLifecycleCallbacks]
 class PackageDossier
@@ -30,12 +32,15 @@ class PackageDossier
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:packageDossier'])]
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
+    #[Groups(['read:packageDossier'])]
     #[ORM\Column(type: Types::DECIMAL, precision: 12, scale: 3)]
     private ?string $tarif = null;
 
+    #[Groups(['read:packageDossier'])]
     #[ORM\Column]
     private array $avantage = [];
 
@@ -45,12 +50,15 @@ class PackageDossier
     #[ORM\OneToMany(targetEntity: Dossier::class, mappedBy: 'package')]
     private Collection $dossiers;
 
+    #[Groups(['read:packageDossier'])]
     #[ORM\Column(length: 255)]
     private ?string $code = null;
 
+    #[Groups(['read:packageDossier'])]
     #[ORM\Column(nullable: true)]
-    private ?bool $isPopu = null;
+    private ?bool $popu = null;
 
+    #[Groups(['read:packageDossier'])]
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
@@ -144,12 +152,12 @@ class PackageDossier
 
     public function isPopu(): ?bool
     {
-        return $this->isPopu;
+        return $this->popu;
     }
 
     public function setPopu(?bool $isPopu): static
     {
-        $this->isPopu = $isPopu;
+        $this->popu = $isPopu;
 
         return $this;
     }

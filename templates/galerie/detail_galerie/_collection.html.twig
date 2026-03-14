@@ -1,0 +1,36 @@
+{% block _detail_galerie_cliches_entry_row %}
+    {{ form_widget(form) }}
+{% endblock %}
+
+{% block _detail_galerie_cliches_widget %}
+    <div class="row">
+        <div class="col-12">
+            <button type="button" id="AddImageBanniere"
+                    data-list-selector="#detail_galerie_cliches"
+                    class="btn btn-outline-primary float-end mb-3">
+                Nouveau
+            </button>
+        </div>
+        <div class="col-12">
+            {{ form_widget(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block _detail_galerie_cliches_entry_widget %}
+
+
+    <div class="col-sm-12 col-md-4 mg-t-10 mg-sm-t-0 mb-3" id="block_{{ id }}">
+        {{ form_widget(form.imageFile,{attr: {class: ' dropify', 'data-height': '200', 'data-default-file': ((form.vars.value) ?  vich_uploader_asset(form.vars.value, 'imageFile') : '')}}) }}
+        {{ form_errors(form.imageFile) }}
+        <div class="d-flex justify-content-between">
+            {{ form_widget(form.legende,{attr: {class: 'form-control '}}) }}
+            <button type="button"
+                    class="btn btn-danger ms-2 delete-image-banniere"
+                    data-action="delete"
+                    data-target="#block_{{ id }}">
+                <i class="fa fa-trash"></i>
+            </button>
+        </div>
+    </div>
+{% endblock %}

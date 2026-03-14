@@ -67,6 +67,9 @@ class EntrepriseHallOfFame
     )]
     private ?File $imageFile = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $badge = null;
+
 
     public function getId(): ?int
     {
@@ -184,6 +187,18 @@ class EntrepriseHallOfFame
     public function getImageFile(): ?File
     {
         return $this->imageFile;
+    }
+
+    public function getBadge(): ?string
+    {
+        return $this->badge;
+    }
+
+    public function setBadge(?string $badge): static
+    {
+        $this->badge = $badge;
+
+        return $this;
     }
 
 }

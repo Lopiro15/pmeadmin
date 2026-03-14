@@ -1,0 +1,56 @@
+{% form_theme form 'billeterie/ticket/_collection.html.twig' %}
+
+<fieldset>
+    <legend>Information Pack</legend>
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Icone SVG</label>
+                {{ form_widget(form.svg,{attr: {class: 'form-control' ~ ((form_errors(form.svg)) ? ' is-invalid': (form.vars.data.svg ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.svg)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Libellé</label>
+                {{ form_widget(form.label,{attr: {class: 'form-control' ~ ((form_errors(form.label)) ? ' is-invalid' : (form.vars.data.label ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.label)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Tarif</label>
+                {{ form_widget(form.tarif,{attr: {class: 'form-control' ~ ((form_errors(form.tarif)) ? ' is-invalid' : (form.vars.data.tarif ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.tarif)}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</fieldset>
+{% if form.avantages is defined %}
+    <fieldset>
+        <legend>Avantages</legend>
+        <div class="table-responsive">
+            <input type="hidden" id="widget-counter-avantage-ticket" value="{{ form.avantages|length }}">
+            <table class="table table-bordered bordered" id="table-collection-avantage-ticket">
+                <thead class="bg-soft-dark">
+                <tr>
+                    <th class="text-center w-75">Description</th>
+                    <th class="text-center w-25">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{ form_widget(form.avantages) }}
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+        </div>
+    </fieldset>
+{% endif %}

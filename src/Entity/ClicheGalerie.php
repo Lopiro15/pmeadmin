@@ -6,6 +6,7 @@ use App\Repository\ClicheGalerieRepository;
 use App\Traits\Horodatage;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -22,6 +23,7 @@ class ClicheGalerie
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:detailGalerie'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $legende = null;
 
@@ -31,6 +33,7 @@ class ClicheGalerie
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imageName = null;
 
+    #[Groups(['read:detailGalerie'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imagePath = null;
 

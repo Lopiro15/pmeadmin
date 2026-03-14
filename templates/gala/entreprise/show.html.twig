@@ -8,7 +8,7 @@
                     <a ><img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="img" class="rounded-6 w-100"></a>
                 </div>
                 <div class="card-body">
-                    <h4>{{ article.raisonSocial }}</h4>
+                    <h4>{{ article.raisonSocial }} - {{ article.badge | raw }}</h4>
                     <br>
                     <table class="table table-sm">
                         <thead>

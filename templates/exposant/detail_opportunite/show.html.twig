@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row row-sm justify-content-center mt-5">
+        <div class="col-xl-10">
+            <div class="card custom-card overflow-hidden">
+                <div class="px-4 pt-4">
+                    <a ><img src="{{ vich_uploader_asset(article, 'imageFile') }}" alt="img" class="rounded-6 w-100"></a>
+                </div>
+                <div class="card-body">
+                    <div class="item-card-desc d-flex mb-2">
+                        <a href="javascript:;" class="d-flex me-4">
+{#                            <i class="fe fe-calendar fs-18 me-2"></i>#}
+                            <span class="my-auto text-dark">{{ article.svg | raw }}</span>
+                        </a>
+                    </div>
+                    <h4>{{ article.badge }} - {{ article.titre }}</h4>
+                    <div>{{ article.description | raw }}</div>
+                    <span>Lien detail: {{ article.linkDetail }}</span>
+                </div>
+                <div class="card-footer">
+                    {{ include('exposant/detail_opportunite/_delete_form.html.twig') }}
+                    <a href="{{ path('app_exposant_detail_opportunite_edit', {'id': article.id}) }}" class="btn btn-primary float-end me-2"> <i class="fas fa-edit"></i> Modifier</a>
+                    <a href="{{ path('app_exposant_detail_opportunite_index') }}" class="btn btn-primary float-end me-2"> <i class="fas fa-arrow-circle-left"></i> Retour</a>
+                </div>
+            </div>
+        </div>
+        <!--end col-->
+        <!--end col-->
+    </div>
+{% endblock %}
+
+
+
+

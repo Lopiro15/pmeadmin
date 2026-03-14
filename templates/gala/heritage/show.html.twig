@@ -21,9 +21,9 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th>{{ a.badge }}</th>
-                                    <th>{{ a.titreBlanc }}</th>
-                                    <th>{{ a.sousTitre }}</th>
+                                    <th>{{ article.badge }}</th>
+                                    <th>{{ article.titreBlanc }}</th>
+                                    <th>{{ article.sousTitre }}</th>
                                 </tr>
                                 </tbody>
                             </table>
@@ -42,19 +42,19 @@
                                         <tbody>
                                             <tr>
                                                 <td>Titre</td>
-                                                <td>{{ a.card1titre }}</td>
+                                                <td>{{ article.card1titre }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Texte gris</td>
-                                                <td>{{ a.card1descriptiongris }}</td>
+                                                <td>{{ article.card1descriptiongris }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Texte blanc</td>
-                                                <td>{{ a.card1descriptionblanc }}</td>
+                                                <td>{{ article.card1descriptionblanc }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Texte gris 2</td>
-                                                <td>{{ a.card1descriptiongris2 }}</td>
+                                                <td>{{ article.card1descriptiongris2 }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -76,10 +76,10 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th>{{ a.card2Nb }}</th>
-                                    <th>{{ a.card2Label }}</th>
-                                    <th>{{ a.card2LabelRouge }}</th>
-                                    <th>{{ a.card2Description }}</th>
+                                    <th>{{ article.card2Nb }}</th>
+                                    <th>{{ article.card2Label }}</th>
+                                    <th>{{ article.card2LabelRouge }}</th>
+                                    <th>{{ article.card2Description }}</th>
                                 </tr>
                                 </tbody>
                             </table>
@@ -98,15 +98,15 @@
                                         <tbody>
                                         <tr>
                                             <td>Titre mini</td>
-                                            <td>{{ a.card3TitreMini }}</td>
+                                            <td>{{ article.card3TitreMini }}</td>
                                         </tr>
                                         <tr>
                                             <td>Texte titre</td>
-                                            <td>{{ a.card3Titre }}</td>
+                                            <td>{{ article.card3Titre }}</td>
                                         </tr>
                                         <tr>
                                             <td>Texte description</td>
-                                            <td>{{ a.card3Description }}</td>
+                                            <td>{{ article.card3Description | raw }}</td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -127,15 +127,15 @@
                                         <tbody>
                                         <tr>
                                             <td>Titre Or</td>
-                                            <td>{{ a.card4TitreOr }}</td>
+                                            <td>{{ article.card4TitreOr }}</td>
                                         </tr>
                                         <tr>
                                             <td>Texte blanc</td>
-                                            <td>{{ a.card4TitreBlanc }}</td>
+                                            <td>{{ article.card4TitreBlanc }}</td>
                                         </tr>
                                         <tr>
                                             <td>Texte gris</td>
-                                            <td>{{ a.card4LabelGris }}</td>
+                                            <td>{{ article.card4LabelGris }}</td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -155,8 +155,8 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th>{{ a.card5Nb }}</th>
-                                    <th>{{ a.card5label }}</th>
+                                    <th>{{ article.card5Nb }}</th>
+                                    <th>{{ article.card5label }}</th>
                                 </tr>
                                 </tbody>
                             </table>

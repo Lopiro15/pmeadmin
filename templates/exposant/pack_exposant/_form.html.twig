@@ -1,0 +1,104 @@
+<fieldset>
+    <legend>Information bannière</legend>
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">icone SVG</label>
+                {{ form_widget(form.svg,{attr: {class: 'form-control' ~ ((form_errors(form.svg)) ? ' is-invalid' : (form.vars.data.svg ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.svg) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Libellé</label>
+                {{ form_widget(form.label,{attr: {class: 'form-control' ~ ((form_errors(form.label)) ? ' is-invalid': (form.vars.data.label ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.label) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Montant</label>
+                {{ form_widget(form.montant,{attr: {class: 'form-control' ~ ((form_errors(form.montant)) ? ' is-invalid': (form.vars.data.montant ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.montant) }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Avantages</legend>
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th class="text-center">Intitulé</th>
+                <th class="text-center">Valeur</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="text-center">Surface</td>
+                <td>
+                    {{ form_widget(form.surface,{attr: {class: 'form-control' ~ ((form_errors(form.surface)) ? ' is-invalid': ((form.vars.data.avantage.surface ?? null) ? ' is-valid' : '' ))}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.surface) }}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">Aménagement</td>
+                <td>
+                    {{ form_widget(form.amenagement,{attr: {class: 'form-control' ~ ((form_errors(form.amenagement)) ? ' is-invalid': ((form.vars.data.avantage.amenagement ?? null) ? ' is-valid' : '' ))}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.amenagement) }}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">Equipements</td>
+                <td>
+                    {{ form_widget(form.equipement,{attr: {class: 'form-control' ~ ((form_errors(form.equipement)) ? ' is-invalid': ((form.vars.data.avantage.equipements ?? null) ? ' is-valid' : '' ))}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.equipement) }}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">Service</td>
+                <td>
+                    {{ form_widget(form.service,{attr: {class: 'form-control' ~ ((form_errors(form.service)) ? ' is-invalid': ((form.vars.data.avantage.services ?? null) ? ' is-valid' : '' ))}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.service) }}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">Visibilité</td>
+                <td>
+                    {{ form_widget(form.visibilite,{attr: {class: 'form-control' ~ ((form_errors(form.visibilite)) ? ' is-invalid': ((form.vars.data.avantage.visibilite ?? null) ? ' is-valid' : '' ))}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.visibilite) }}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">Bonus</td>
+                <td>
+                    {{ form_widget(form.bonus,{attr: {class: 'form-control' ~ ((form_errors(form.bonus)) ? ' is-invalid': ((form.vars.data.avantage.bonus ?? null) ? ' is-valid' : '' ))}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.bonus) }}
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</fieldset>

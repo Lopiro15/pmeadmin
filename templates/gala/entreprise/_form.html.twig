@@ -23,7 +23,7 @@
         <div class="col-md-12">
             <div class="mb-3">
                 <label class="form-label">Lien linkedin</label>
-                {{ form_widget(form.linkedin,{attr: {class: 'content ' ~ ((form_errors(form.linkedin)) ? ' is-invalid': (form.vars.data.linkedin ? ' is-valid' : '' ))}}) }}
+                {{ form_widget(form.linkedin,{attr: {class: 'form-control ' ~ ((form_errors(form.linkedin)) ? ' is-invalid': (form.vars.data.linkedin ? ' is-valid' : '' ))}}) }}
                 <div class="invalid-feedback">
                     {{form_errors(form.linkedin)}}
                 </div>
@@ -35,6 +35,15 @@
                 {{ form_widget(form.siteWeb,{attr: {class: 'form-control' ~ ((form_errors(form.siteWeb)) ? ' is-invalid': (form.vars.data.siteWeb ? ' is-valid' : '' ))}}) }}
                 <div class="invalid-feedback">
                     {{form_errors(form.siteWeb)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Badge</label>
+                {{ form_widget(form.badge,{attr: {class: 'form-control' ~ ((form_errors(form.badge)) ? ' is-invalid': (form.vars.data.badge ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.badge)}}
                 </div>
             </div>
         </div>

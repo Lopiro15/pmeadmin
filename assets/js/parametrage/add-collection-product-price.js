@@ -20,7 +20,6 @@ $(document).ready(function () {
             // create a new list element and add it to the list
             $('#table-collection-price-produits tbody').append(newWidget);
             // $('.select2').select2({width: '100%', theme: 'bootstrap'});
-            $('select.select2').select2({width: '100%'});
             addTagFormDeleteLinkProductPrice(newWidget);
         });
     };
@@ -34,5 +33,4 @@ $(document).ready(function () {
 
     addFormToCollectionProductPrice();
     addTagFormDeleteLinkProductPrice();
-    $('select.select2').select2({width: '100%'});
 });

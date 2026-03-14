@@ -1,0 +1,57 @@
+{% form_theme form 'galerie/detail_galerie/_collection.html.twig' %}
+
+<fieldset>
+    <legend>Information Clichés édition</legend>
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Edition</label>
+                {{ form_widget(form.edition,{attr: {class: 'form-control' ~ ((form_errors(form.edition)) ? ' is-invalid' : (form.vars.data.edition ? ' is-valid' : '' )) }}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.edition)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label">Titre</label>
+                {{ form_widget(form.titre,{attr: {class: 'form-control' ~ ((form_errors(form.titre)) ? ' is-invalid': (form.vars.data.titre ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.titre)}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                {{ form_widget(form.description,{attr: {class: 'form-control' ~ ((form_errors(form.description)) ? ' is-invalid': (form.vars.data.description ? ' is-valid' : '' ))}}) }}
+                <div class="invalid-feedback">
+                    {{form_errors(form.description)}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</fieldset>
+
+{% if form.cliches is defined %}
+    <fieldset>
+        <legend>Clichés</legend>
+        <input type="hidden" id="widget-counter-image-bannieres" value="{{ form.cliches|length }}">
+        {#        <table class="table table-bordered bordered" id="table-collection-image-produit">#}
+        {#            <thead class="bg-soft-dark">#}
+        {#            <tr>#}
+        {#                <th class="text-center">Image</th>#}
+        {#                <th class="text-center">Action</th>#}
+        {#            </tr>#}
+        {#            </thead>#}
+        {#            <tbody>#}
+
+        {#            </tbody>#}
+        {#        </table>#}
+        <div class="row mb-4" id="table-collection-image-bannieres">
+            {{ form_widget(form.cliches, {attr: {class: 'row '}}) }}
+        </div>
+    </fieldset>
+{% endif %}

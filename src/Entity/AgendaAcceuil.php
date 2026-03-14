@@ -32,7 +32,7 @@ class AgendaAcceuil
     private ?int $id = null;
 
     #[Groups(['read:agendaAccueil'])]
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $badge = null;
 
     #[Groups(['read:agendaAccueil'])]

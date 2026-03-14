@@ -13,9 +13,28 @@ class PackExposantType extends AbstractType
     {
         $builder
             ->add('label')
-            ->add('svg')
+            ->add('svg', null, [
+                'required' => false,
+            ])
             ->add('montant')
-            ->add('avantage')
+            ->add("surface", null, [
+                'mapped' => false,
+            ])
+            ->add("amenagement", null, [
+                'mapped' => false,
+            ])
+            ->add("equipement", null, [
+                'mapped' => false,
+            ])
+            ->add("service", null, [
+                'mapped' => false,
+            ])
+            ->add("visibilite", null, [
+                'mapped' => false,
+            ])
+            ->add("bonus", null, [
+                'mapped' => false,
+            ])
         ;
     }
 

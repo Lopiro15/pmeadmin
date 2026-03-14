@@ -3,8 +3,11 @@
 namespace App\Form\Sponsor;
 
 use App\Entity\PackageDossier;
+use App\Form\Galerie\ClicheGalerieType;
+use phpDocumentor\Reflection\Types\Collection;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,15 +18,22 @@ class PackageDossierType extends AbstractType
         $builder
             ->add('nom')
             ->add('tarif')
-            ->add('avantage')
             ->add('code', ChoiceType::class, [
                 'choices'  => [
                     'Sponsor' => 'SPONSOR',
                     'Partenaire' => 'PARTENAIRE',
                 ],
             ])
-            ->add('isPopu')
+            ->add('popu')
             ->add('description')
+            ->add('avantages', CollectionType::class, [
+                'mapped' => false,
+                'entry_type' => AvantagePackType::class,
+                'entry_options' => ['label' => false],
+                'prototype' => true,
+                'allow_add' => true,
+                'allow_delete' => true
+            ])
         ;
     }
 

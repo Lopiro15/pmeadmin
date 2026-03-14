@@ -2,13 +2,24 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\BanniereGalerieRepository;
 use App\Traits\Horodatage;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection()
+    ],
+    normalizationContext: ['groups' => 'read:galerieBanniere']
+)]
 #[ORM\Entity(repositoryClass: BanniereGalerieRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[Vich\Uploadable]
@@ -22,18 +33,22 @@ class BanniereGalerie
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Groups(['read:galerieBanniere'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $badge = null;
 
+    #[Groups(['read:galerieBanniere'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreBlanc = null;
 
+    #[Groups(['read:galerieBanniere'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $titreRouge = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imageName = null;
 
+    #[Groups(['read:galerieBanniere'])]
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imagePath = null;
 
