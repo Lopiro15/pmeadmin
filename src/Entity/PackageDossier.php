@@ -30,6 +30,7 @@ class PackageDossier
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['read:packageDossier'])]
     private ?int $id = null;
 
     #[Groups(['read:packageDossier'])]

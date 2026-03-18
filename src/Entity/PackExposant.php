@@ -30,6 +30,7 @@ class PackExposant
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['read:packExpo'])]
     private ?int $id = null;
 
     #[Groups(['read:packExpo'])]

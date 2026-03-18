@@ -30,6 +30,7 @@ class TypeTicket
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['read:typeTicket'])]
     private ?int $id = null;
 
     #[Groups(['read:typeTicket'])]

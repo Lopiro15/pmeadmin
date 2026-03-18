@@ -29,6 +29,7 @@ class AgendaAcceuil
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['read:agendaAccueil'])]
     private ?int $id = null;
 
     #[Groups(['read:agendaAccueil'])]

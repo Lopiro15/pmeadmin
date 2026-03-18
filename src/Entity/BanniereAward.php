@@ -32,6 +32,7 @@ class BanniereAward
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['read:banniereAward'])]
     private ?int $id = null;
 
     #[Groups(['read:banniereAward'])]

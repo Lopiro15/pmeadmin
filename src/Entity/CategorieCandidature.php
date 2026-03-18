@@ -34,6 +34,7 @@ class CategorieCandidature
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['read:categorieCandidature'])]
     private ?int $id = null;
 
     #[Groups(['read:categorieCandidature'])]
