@@ -44,7 +44,7 @@ class MailService
         $adresse = new Address($_ENV["MAILER_FROM"], name: $_ENV["MAILER_NAME"]);
         $email = (new TemplatedEmail())
             ->from($adresse)
-            ->to($exposant->getEmail())
+            ->to(strtolower($exposant->getEmail()))
             ->subject("Demande d'Exposition")
             ->htmlTemplate('emails/formulaire/Exposant.html.twig')
             ->context([
@@ -62,7 +62,7 @@ class MailService
         $adresse = new Address($_ENV["MAILER_FROM"], name: $_ENV["MAILER_NAME"]);
         $email = (new TemplatedEmail())
             ->from($adresse)
-            ->to($candidature->getEmail())
+            ->to(strtolower($candidature->getEmail()))
             ->subject("Confirmation de candidature")
             ->htmlTemplate('emails/formulaire/inscription.html.twig')
             ->context([
@@ -81,7 +81,7 @@ class MailService
         $adresse = new Address($_ENV["MAILER_FROM"], name: $_ENV["MAILER_NAME"]);
         $email = (new TemplatedEmail())
             ->from($adresse)
-            ->to($dossier->getEmail())
+            ->to(strtolower($dossier->getEmail()))
             ->subject("Votre proposition de partenariat")
             ->htmlTemplate('emails/formulaire/partenaire.html.twig')
             ->context([
@@ -100,7 +100,7 @@ class MailService
         $adresse = new Address($_ENV["MAILER_FROM"], name: $_ENV["MAILER_NAME"]);
         $email = (new TemplatedEmail())
             ->from($adresse)
-            ->to($dossier->getEmail())
+            ->to(strtolower($dossier->getEmail()))
             ->subject("Votre demande de sponsoring")
             ->htmlTemplate('emails/formulaire/sponsor.html.twig')
             ->context([
@@ -119,7 +119,7 @@ class MailService
         $adresse = new Address($_ENV["MAILER_FROM"], name: $_ENV["MAILER_NAME"]);
         $email = (new TemplatedEmail())
             ->from($adresse)
-            ->to($reservation->getEmail())
+            ->to(strtolower($reservation->getEmail()))
             ->subject("Confirmation de reservation")
             ->htmlTemplate('emails/formulaire/ticket.html.twig')
             ->context([
@@ -138,7 +138,7 @@ class MailService
         $adresse = new Address($_ENV["MAILER_FROM"], name: $_ENV["MAILER_NAME"]);
         $email = (new TemplatedEmail())
             ->from($adresse)
-            ->to($to)
+            ->to(strtolower($to))
             ->subject($subject)
             ->htmlTemplate('emails/reply.html.twig')
             ->context([
