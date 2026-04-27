@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+    <div class="row row-sm justify-content-center mt-5">
+        <div class="col-10">
+            <div class="card custom-card">
+                <div class="card-header  p-3 tx-semibold tx-white bg-primary">
+                    Liste des éventuels participants
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
+                            <thead>
+                            <tr>
+                                <th class="text-center">Nom</th>
+                                <th class="text-center">Prénoms</th>
+                                <th class="text-center">Contacts</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">Entreprise</th>
+                                <th class="text-center">Fonction</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for p in participants %}
+                                <tr>
+                                    <th class="">{{ p.nom }}</th>
+                                    <th class="">{{ p.prenoms }}</th>
+                                    <th class="">{{ p.contact }}</th>
+                                    <th class="">{{ p.email }}</th>
+                                    <th>{{ p.entreprise }}</th>
+                                    <th class="">{{ p.fonction}}</th>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+{#                <div class="card-footer">#}
+{#                    <a href="{{ path('app_admin_offre_new') }}" class="btn btn-primary float-end">Nouveau</a>#}
+{#                </div>#}
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+{% endblock %}
+
